@@ -9,7 +9,7 @@
 }
 
 a {
-    color: #555555;
+    color: #FFFDD0 !important;
     transition: color ease-in-out 0.5s;
 }
 
