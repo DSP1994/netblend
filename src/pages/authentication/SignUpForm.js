@@ -12,10 +12,13 @@ const SignUpForm = () => {
     <Row>
       <Col>
         <Container>
-
+          <h1>Sign Up</h1>
+          {/* I will put my form here, ish */}
         </Container>
         <Container>
-          
+          <Link>
+            Already a coffee addict? <span>Sign In Here!</span>
+          </Link>
         </Container>
       </Col>
       <Col>
