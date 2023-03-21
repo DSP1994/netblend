@@ -19,3 +19,11 @@
     text-transform: uppercase;
     color: #3e2622;
 }
+
+.Container {
+    padding: 30px 10px;
+}
+
+.SignUpCol {
+    height: 375px;
+}
