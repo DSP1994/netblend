@@ -46,6 +46,10 @@ a:hover i {
     transition: color ease-in-out 0.5s;
 }
 
+input[type='file'] {
+    display: none;
+}
+
 i {
     color: #FFFDD0;
     font-size: 1.5rem;
