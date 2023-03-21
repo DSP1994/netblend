@@ -56,7 +56,7 @@ const SignUpForm = () => {
       </Col>
       <Col
         md={6}
-        className={`my-auto d-npne d-md-block p-2 ${styles.SignUpCol}`}>
+        className={`my-auto d-none d-md-block p-2 ${styles.SignUpCol}`}>
         <Image className={`${appStyles.FillerImage}`}
         src={'https://res.cloudinary.com/dsp1994/image/upload/v1679421624/SignInUpPhoto_x7emxh.jpg'}/>
       </Col>
