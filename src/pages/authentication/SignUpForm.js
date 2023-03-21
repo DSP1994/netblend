@@ -30,9 +30,7 @@ const SignUpForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      console.log("test 1")
       await axios.post('/dj-rest-auth/registration/', signUpData);
-      console.log("test 2")
       history.push('/signin');
       
     } catch (err) {
@@ -96,11 +94,14 @@ const SignUpForm = () => {
                 {message}
               </Alert>
             ))}
-            <Button className={`${btnStyles.Button} ${btnStyles.Fill}`}>
+            <Button 
+              className={`${btnStyles.Button} ${btnStyles.Fill}`}
+              type='submit'
+            >
               Sign Up Now!
             </Button>
             {errors.non_field_errors?.map((message, idx) => (
-              <Alert variant='warning' className="mt-3">
+              <Alert variant='warning' key={idx} className="mt-3">
                 {message}
               </Alert>
             ))}            
