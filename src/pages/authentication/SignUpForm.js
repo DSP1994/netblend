@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 
 import styles from '../../design/SignInUpForm.module.css';
@@ -8,6 +8,13 @@ import appStyles from '../../App.module.css';
 import { Form, Button, Image, Row, Container, Col } from 'react-bootstrap';
 
 const SignUpForm = () => {
+  const [signUpData, setSignUpData] = useState({
+    username: '',
+    password1: '',
+    password2: '',
+  })
+  const {username, password1, password2} = signUpData;
+
   return (
     <Row className={styles.Row}>
       <Col className='my-auto py-2 p-md-2' md={6}>
@@ -21,6 +28,7 @@ const SignUpForm = () => {
               type="text"
               placeholder="Enter Username"
               name="username"
+              value={username}
               />
             </Form.Group>
 
@@ -31,6 +39,7 @@ const SignUpForm = () => {
                 type="password"
                 placeholder="Password"
                 name='password1'
+                value={password1}
               />
             </Form.Group>
             <Form.Group controlId="password2">
@@ -40,6 +49,7 @@ const SignUpForm = () => {
                 type="password"
                 placeholder="Confirm Password"
                 name='password2'
+                value={password2}
               />
             </Form.Group>
             <Button className={`${btnStyles.Button} ${btnStyles.Wide}`}>
