@@ -2,6 +2,7 @@ import styles from './App.module.css';
 import NavBar from './app_components/NavBar';
 import Container from 'react-bootstrap/Container'
 import {Route, Switch} from 'react-router-dom'
+import './netblend_api/axiosDefaults'
 
 
 function App() {
