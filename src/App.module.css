@@ -1,0 +1,9 @@
+.App{
+    font-family: "Roboto Condensed", sans-serif;
+    background-color: brown;
+    min-height: 100vh;
+}
+
+div {
+    background-color: orange;
+}
