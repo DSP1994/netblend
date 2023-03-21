@@ -11,8 +11,8 @@ function App() {
       <Container className={styles.TitlePages}>
         <Switch>
           <Route exact path='/' render={() => <h1>Home Page Tester</h1>} />
-          <Route exact path='/' render={() => <h1>Sign In Tester</h1>} />
-          <Route exact path='/' render={() => <h1>Sign Up Tester</h1>} />
+          <Route exact path='/signin' render={() => <h1>Sign In Tester</h1>} />
+          <Route exact path='/signup' render={() => <h1>Sign Up Tester</h1>} />
         </Switch>
       </Container>
     </div>

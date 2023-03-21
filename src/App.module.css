@@ -3,6 +3,7 @@
     background-color: #FFFDD0;
     min-height: 100vh;
 }
+
 .TitlePages {
     padding-top: 80px;
 }
@@ -12,11 +13,12 @@
 }
 
 a {
-    color: #FFFDD0 !important;
+    color: #FFFDD0;
     transition: color ease-in-out 0.5s;
 }
 
 a:hover {
+    color: #b29e83;
     text-decoration: none;
 }
 
