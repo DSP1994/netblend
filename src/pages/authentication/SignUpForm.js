@@ -14,8 +14,9 @@ const SignUpForm = () => {
     password1: '',
     password2: '',
   })
-  const {username, password1, password2} = signUpData;
 
+  const {username, password1, password2} = signUpData;
+  
   const [errors, setErrors] = useState({});
   const history = useHistory();
 
@@ -24,15 +25,18 @@ const SignUpForm = () => {
       ...signUpData,
       [event.target.name]: event.target.value,
     });
-  } 
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
+      console.log("test 1")
       await axios.post('/dj-rest-auth/registration/', signUpData);
+      console.log("test 2")
       history.push('/signin');
+      
     } catch (err) {
-      setErrors(err.response?.data)
+      setErrors(err.response?.data);
     }
   }
 
@@ -71,6 +75,11 @@ const SignUpForm = () => {
                 onChange={handleChange}
               />
             </Form.Group>
+            {errors.password1?.map((message, idx) => (
+              <Alert variant='warning' key={idx}>
+                {message}
+              </Alert>
+            ))}            
             <Form.Group controlId="password2">
               <Form.Label className='d-none'>Confirm Password</Form.Label>
               <Form.Control
@@ -82,9 +91,19 @@ const SignUpForm = () => {
                 onChange={handleChange}
               />
             </Form.Group>
-            <Button className={`${btnStyles.Button} ${btnStyles.Wide}`}>
+            {errors.password2?.map((message, idx) => (
+              <Alert variant='warning' key={idx}>
+                {message}
+              </Alert>
+            ))}
+            <Button className={`${btnStyles.Button} ${btnStyles.Fill}`}>
               Sign Up Now!
             </Button>
+            {errors.non_field_errors?.map((message, idx) => (
+              <Alert variant='warning' className="mt-3">
+                {message}
+              </Alert>
+            ))}            
           </Form>
           
         </Container>
