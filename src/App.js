@@ -3,6 +3,7 @@ import NavBar from './app_components/NavBar';
 import Container from 'react-bootstrap/Container'
 import {Route, Switch} from 'react-router-dom'
 import './netblend_api/axiosDefaults'
+import SignUpForm from './pages/authentication/SignUpForm';
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
         <Switch>
           <Route exact path='/' render={() => <h1>Home Page Tester</h1>} />
           <Route exact path='/signin' render={() => <h1>Sign In Tester</h1>} />
-          <Route exact path='/signup' render={() => <h1>Sign Up Tester</h1>} />
+          <Route exact path='/signup' render={() => <SignUpForm />} />
           <Route render={
               ()=>
               <p>
