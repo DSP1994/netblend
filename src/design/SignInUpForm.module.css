@@ -1,0 +1,21 @@
+.Row {
+    /*
+    I had to use the 'calc' function for this
+    as my .TitlePages is forcing 80px down below
+    the NavBar. I'm sure there is a better way
+    to do this, it is something I should look
+    into for my next project after CI.
+    */
+    height: calc(100vh - 80px);
+}
+
+.Header {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    text-align: center;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    color: #3e2622;
+}

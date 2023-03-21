@@ -8,6 +8,13 @@
     padding-top: 80px;
 }
 
+.Content {
+    background-color: #D9CEAA;
+    padding: 15px;
+    border-radius: 2px;
+    border: 2px solid #3e2622;
+}
+
 * {
     box-sizing: border-box;
 }

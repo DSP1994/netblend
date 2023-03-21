@@ -5,17 +5,17 @@ import styles from '../../design/SignInUpForm.module.css';
 import btnStyles from '../../design/Button.module.css';
 import appStyles from '../../App.module.css';
 
-import { Form, Button, Image, COl, Row, Container, Col } from 'react-bootstrap';
+import { Form, Button, Image, Row, Container, Col } from 'react-bootstrap';
 
 const SignUpForm = () => {
   return (
-    <Row>
-      <Col>
-        <Container>
-          <h1>Sign Up</h1>
-          {/* I will put my form here, ish */}
+    <Row className={styles.Row}>
+      <Col className='my-auto py-2 p-md-2' md={6}>
+        <Container className={`${appStyles.Content} p-4`}>
+          <h1 className={styles.Header}>Sign Up</h1>
+          <p>Form Here</p>
         </Container>
-        <Container>
+        <Container className={`mt-5 ${appStyles.Content}`}>
           <Link>
             Already a coffee addict? <span>Sign In Here!</span>
           </Link>
