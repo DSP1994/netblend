@@ -14,7 +14,7 @@
     border: 1px solid #3e2622;
     box-sizing: border-box;
     border-radius: 2px;
-    color: #643E36;
+    color: #643E36 !important;
     text-align: center;
     padding: 10px;
 }
