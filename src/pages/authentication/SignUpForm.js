@@ -13,7 +13,38 @@ const SignUpForm = () => {
       <Col className='my-auto py-2 p-md-2' md={6}>
         <Container className={`${appStyles.Content} p-4`}>
           <h1 className={styles.Header}>Sign Up</h1>
-          <p>Form Here</p>
+          <Form>
+            <Form.Group controlId="username">
+              <Form.Label className='d-none'>Username</Form.Label>
+              <Form.Control
+              type="text"
+              placeholder="Enter Username"
+              name="username"
+              />
+            </Form.Group>
+
+            <Form.Group controlId="password1">
+              <Form.Label className='d-none'>Password</Form.Label>
+              <Form.Control
+                className={styles.Input}
+                type="password"
+                placeholder="Password"
+                name='password1'
+              />
+            </Form.Group>
+            <Form.Group controlId="password2">
+              <Form.Label className='d-none'>Confirm Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Confirm Password"
+                name='password2'
+              />
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+          </Form>
+          
         </Container>
         <Container className={`mt-5 ${appStyles.Content}`}>
           <Link className={styles.Link} to="/signin">
