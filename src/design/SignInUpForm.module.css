@@ -20,8 +20,23 @@
     color: #3e2622;
 }
 
+.Link {
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+
+.Link span {
+    color: #3e2622;
+}
+
 .Container {
     padding: 30px 10px;
+}
+
+.SignInCol {
+    height: 320px;
 }
 
 .SignUpCol {
