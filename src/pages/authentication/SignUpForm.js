@@ -17,6 +17,7 @@ const SignUpForm = () => {
             <Form.Group controlId="username">
               <Form.Label className='d-none'>Username</Form.Label>
               <Form.Control
+              className={styles.Input}
               type="text"
               placeholder="Enter Username"
               name="username"
@@ -35,6 +36,7 @@ const SignUpForm = () => {
             <Form.Group controlId="password2">
               <Form.Label className='d-none'>Confirm Password</Form.Label>
               <Form.Control
+                className={styles.Input}
                 type="password"
                 placeholder="Confirm Password"
                 name='password2'
