@@ -3,6 +3,9 @@
     background-color: #FFFDD0;
     min-height: 100vh;
 }
+.TitlePages {
+    padding-top: 80px;
+}
 
 * {
     box-sizing: border-box;
