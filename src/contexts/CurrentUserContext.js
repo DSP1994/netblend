@@ -3,8 +3,8 @@ import axios from 'axios';
 import { axiosReq, axiosRes } from '../netblend_api/axiosDefaults';
 import { useHistory } from 'react-router-dom';
 
-export const CurrentUserContext = createContext()
-export const SetCurrentUserContext = createContext()
+export const CurrentUserContext = createContext();
+export const SetCurrentUserContext = createContext();
 
 export const useCurrentUser = () => useContext(CurrentUserContext)
 export const useSetCurrentUser = () => useContext(SetCurrentUserContext)
