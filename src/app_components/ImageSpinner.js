@@ -1,6 +1,6 @@
 import React from 'react'
 import { Spinner } from 'react-bootstrap'
-import ImageSpinner from '../design/ImageSpinner.module.css'
+import styles from '../design/ImageSpinner.module.css'
 
 const Image = () => {
     const { spinner, src, message } = props
