@@ -45,7 +45,7 @@ const NavBar = () => {
                     <img src={Coffee_Bean_Logo} alt="logo" height="45"/>
                 </Navbar.Brand>
             </NavLink>
-            
+            {currentUser && addPostIcon }
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto text-right">
