@@ -13,12 +13,17 @@ function SignInForm () {
         username: "",
         password: "",
     });
-    const { username, passowrd } = signInData;
+    const { username, password } = signInData;
 
     const history = useHistory();
-}
 
-const SignInForm = () => {
+    const handleChange = (event) => {
+        setSignInData({
+            ...signInData,
+            [event.target.name]: event.target.value,
+        });
+    };
+
   return (
     <Row className={styles.Row}>
         <Col className='my-auto py-2 p-md-2' md={6}>
@@ -31,7 +36,9 @@ const SignInForm = () => {
                             className={styles.Input}
                             type="text"
                             placeholder="Enter Username"
-                            name="username"                            
+                            name="username"
+                            value={username}
+                            onChange={handleChange}                            
                         />
                     </Form.Group>
                     <Form.Group controlId="password">
@@ -40,7 +47,9 @@ const SignInForm = () => {
                             className={styles.Input}
                             type="password"
                             placeholder="Enter Password"
-                            name="password"                            
+                            name="password"   
+                            value={password}
+                            onChange={handleChange}                         
                         />
                     </Form.Group>
                     <Button 
