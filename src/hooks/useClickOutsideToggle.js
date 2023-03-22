@@ -16,9 +16,7 @@ const useClickOutsideToggle = () => {
         };
     }, [ref])
 
-  return (
-    <div>useClickOutsideToggle</div>
-  )
+  return {expanded, setExpanded, ref}
 }
 
 export default useClickOutsideToggle
