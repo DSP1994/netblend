@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useState} from 'react';
+import axios from 'axios';
 
 import styles from "../../design/SignInUpForm.module.css";
 import btnStyles from "../../design/Button.module.css";
@@ -6,6 +7,13 @@ import appStyles from "../../App.module.css"
 
 import { Row, Col, Container, Image, Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+
+function SignInForm () {
+    const [signInData, setSignInData] = useState({
+        username: "",
+        password: "",
+    });
+}
 
 const SignInForm = () => {
   return (
