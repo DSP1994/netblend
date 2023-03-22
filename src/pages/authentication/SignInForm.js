@@ -4,7 +4,7 @@ import styles from "../../design/SignInUpForm.module.css";
 import btnStyles from "../../design/Button.module.css";
 import appStyles from "../../App.module.css"
 
-import { Row, Col, Container, Image } from 'react-bootstrap';
+import { Row, Col, Container, Image, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const SignInForm = () => {
@@ -13,7 +13,9 @@ const SignInForm = () => {
         <Col className='my-auto py-2 p-md-2' md={6}>
             <Container className={`${appStyles.Content} p-4`}>
                 <h1 className={styles.Header}>Sign In</h1>
-                <p>Form</p>
+                <Form>
+                    
+                </Form>
             </Container>
             <Container className={`mt-5 ${appStyles.Content}`}>
             <Link className={styles.Link} to="/signup">
