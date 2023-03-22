@@ -5,8 +5,11 @@ import {Route, Switch} from 'react-router-dom'
 import './netblend_api/axiosDefaults'
 import SignUpForm from './pages/authentication/SignUpForm';
 import SignInForm from './pages/authentication/SignInForm';
-import { useEffect, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import axios from 'axios';
+
+export const CurrentUserContext = createContext()
+export const SetCurrentUserContext = createContext()
 
 
 function App() {
@@ -22,7 +25,7 @@ function App() {
   useEffect(() => {
     handleMount()
   }, [])
-  
+
   return (
     <div className={styles.App}>
       <NavBar />
