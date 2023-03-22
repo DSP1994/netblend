@@ -106,7 +106,6 @@ const SignUpForm = () => {
               </Alert>
             ))}            
           </Form>
-          
         </Container>
         <Container className={`mt-5 ${appStyles.Content}`}>
           <Link className={styles.Link} to="/signin">
