@@ -4,6 +4,7 @@ import Coffee_Bean_Logo from '../images/Coffee_Bean_Logo.png';
 import styles from '../design/NavBar.module.css';
 import { NavLink } from 'react-router-dom';
 import { useCurrentUser } from '../contexts/CurrentUserContext';
+import Avatar from './Avatar';
 
 const NavBar = () => {
     const currentUser = useCurrentUser();
@@ -47,7 +48,7 @@ const NavBar = () => {
                         to={`/profiles/${currentUser?.profile_id}`}
                         className={styles.NavLink}
                         >
-                            <img src={currentUser?.profile_image}/>
+                            <Avatar src={currentUser?.profile_image} text ="Profile" height={40} />
                     </NavLink>                                                 
                 </>
     const loggedOutIcons = ( 
