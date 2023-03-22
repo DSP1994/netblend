@@ -5,9 +5,11 @@ import {Route, Switch} from 'react-router-dom'
 import './netblend_api/axiosDefaults'
 import SignUpForm from './pages/authentication/SignUpForm';
 import SignInForm from './pages/authentication/SignInForm';
+import { useState } from 'react';
 
 
 function App() {
+  const [currentUser, setCurrentUser] = useState(null)
   return (
     <div className={styles.App}>
       <NavBar />
