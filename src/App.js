@@ -5,11 +5,24 @@ import {Route, Switch} from 'react-router-dom'
 import './netblend_api/axiosDefaults'
 import SignUpForm from './pages/authentication/SignUpForm';
 import SignInForm from './pages/authentication/SignInForm';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
+
+  const handleMount = async () => {
+    try {
+      const {data} = await axios.get('dj-rest-auth/user/')
+      setCurrentUser(data) 
+    } catch (error) {}
+  }
+
+  useEffect(() => {
+    handleMount()
+  }, [])
+  
   return (
     <div className={styles.App}>
       <NavBar />
