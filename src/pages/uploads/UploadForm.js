@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
-// import upload_image from '../../design/upload_image.jpg'
+import upload_image from '../../images/upload_image.jpg'
 
+import styles from '../../design/UploadForm.module.css'
 import btnStyles from '../../design/Button.module.css'
 import appStyles from '../../App.module.css'
 import { Row, Col, Container, Button, Form } from 'react-bootstrap'
 
-function UploadCreateForm(){
+
+const UploadForm = () => {
     const [error, setErrors] = useState({})
 
     const textfields = (
@@ -23,13 +25,12 @@ function UploadCreateForm(){
         </div>   
     )
 
-const UploadForm = () => {
   return (
     <Form>
         <Row>
             <Col className='py-2 p-0 p-md-2' md={8} lg={8}>
                 <Container
-                    className={`${appStyles.Content} d-flex flex-column justify-content-center`}
+                    className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
                 >
                     <Form.Group>
                         <Form.Label
