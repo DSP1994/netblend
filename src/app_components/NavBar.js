@@ -7,7 +7,7 @@ import { CurrentUserContext } from '../App';
 
 const NavBar = () => {
     const currentUser = useContext(CurrentUserContext)
-    const loggedInIcons = <>{currentUser?.user}</>
+    const loggedInIcons = <>{currentUser?.username}</>
     const loggedOutIcons = ( <>
                     <NavLink
                         to='signin'
@@ -47,7 +47,7 @@ const NavBar = () => {
                         <i className="fas fa-home"></i>
                         Home
                     </NavLink>
-                    
+                    {currentUser ? loggedInIcons : loggedOutIcons}
                 </Nav>
             </Navbar.Collapse>
         </Container>
