@@ -7,9 +7,27 @@ import { Row, Col, Container, Button, Form } from 'react-bootstrap'
 
 const UploadForm = () => {
   return (
-    <Row>
-
-    </Row>
+    <Form>
+        <Row>
+            <Col className='py-2 p-0 p-md-2' md={8} lg={8}>
+                <Container
+                    className={`${appStyles.Content} d-flex flex-column justify-content-center`}
+                >
+                    <Form.Group>
+                        <Form.Label
+                            className='d-flex justify-content-center'
+                            htmlFor='image-upload'
+                        >Image
+                        </Form.Label>
+                    </Form.Group>
+                    <div className='d-md-none'>{textfields}</div>
+                </Container>
+            </Col>
+            <Col md={4} lg={4} className='d-none d-md-block p-0 p-md-2'>
+                <Container className={appStyles.Content}>{textfields}</Container>
+            </Col>
+        </Row>
+    </Form>
   )
 }
 
