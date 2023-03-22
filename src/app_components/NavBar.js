@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import { Container, Navbar, Nav } from 'react-bootstrap';
 import Coffee_Bean_Logo from '../images/Coffee_Bean_Logo.png';
 import styles from '../design/NavBar.module.css';
@@ -86,7 +86,7 @@ const NavBar = () => {
                 </>
     )
   return (
-    <Navbar className={styles.NavBar} expand="sm" fixed="top">
+    <Navbar expanded={expanded} className={styles.NavBar} expand="sm" fixed="top">
         <Container>
             <NavLink to='/'>
                 <Navbar.Brand>
@@ -94,7 +94,11 @@ const NavBar = () => {
                 </Navbar.Brand>
             </NavLink>
             {currentUser && addPostIcon }
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Toggle 
+                aria-controls="basic-navbar-nav"
+                onClick={() => setExpanded(!expanded)}
+                ref={ref}
+            />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto text-right">
                     <NavLink
