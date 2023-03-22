@@ -5,7 +5,7 @@ import styles from "../../design/SignInUpForm.module.css";
 import btnStyles from "../../design/Button.module.css";
 import appStyles from "../../App.module.css"
 
-import { Row, Col, Container, Image, Form, Button } from 'react-bootstrap';
+import { Row, Col, Container, Image, Form, Button, Alert } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 
 function SignInForm () {
@@ -14,7 +14,7 @@ function SignInForm () {
         password: "",
     });
     const { username, password } = signInData;
-
+    const [errors, setErrors] = useState({});
     const history = useHistory();
 
     const handleSubmit = async (event) => {
@@ -22,7 +22,9 @@ function SignInForm () {
         try {
             await axios.post("/dj-rest-auth/login/", signInData);
             history.push("/");
-        } catch (error) {}
+        } catch (error) {
+            setErrors(error.response?.data);
+        }
     }
 
     const handleChange = (event) => {
@@ -49,6 +51,11 @@ function SignInForm () {
                             onChange={handleChange}                            
                         />
                     </Form.Group>
+                    {errors.username?.map((message, idx) => (
+                    <Alert variant='warning' key={idx}>
+                        {message}
+                    </Alert>
+                    ))}                    
                     <Form.Group controlId="password">
                         <Form.Label className="d-none">Password</Form.Label>
                         <Form.Control 
@@ -60,12 +67,22 @@ function SignInForm () {
                             onChange={handleChange}                         
                         />
                     </Form.Group>
+                    {errors.password?.map((message, idx) => (
+                    <Alert variant='warning' key={idx}>
+                        {message}
+                    </Alert>
+                    ))}                    
                     <Button 
                         type="submit"
                         className={`${btnStyles.Button} ${btnStyles.Fill}`}
                     >
                         Sign Up Now!
-                    </Button>                  
+                    </Button>
+                    {errors.non_field_errors?.map((message, idx) => (
+                    <Alert variant='warning' key={idx} className="mt-3">
+                        {message}
+                    </Alert>
+                    ))}                                   
                 </Form>
             </Container>
             <Container className={`mt-5 ${appStyles.Content}`}>
