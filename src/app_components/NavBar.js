@@ -3,11 +3,22 @@ import { Container, Navbar, Nav } from 'react-bootstrap';
 import Coffee_Bean_Logo from '../images/Coffee_Bean_Logo.png';
 import styles from '../design/NavBar.module.css';
 import { NavLink } from 'react-router-dom';
-import { useCurrentUser } from '../contexts/CurrentUserContext';
+import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 import Avatar from './Avatar';
+import axios from 'axios';
 
 const NavBar = () => {
     const currentUser = useCurrentUser();
+    const setCurrentUser = useSetCurrentUser();
+
+    const handleSignOut = async () => {
+        try {
+            await axios.post('dj-rest-auth/logout/');
+            setCurrentUser(null)
+        } catch (error) {
+            console.log(error)            
+        }
+    }
     const addPostIcon = (
                     <NavLink
                         to='/posts/create'
@@ -39,7 +50,7 @@ const NavBar = () => {
                     <NavLink
                         to='/'
                         className={styles.NavLink}
-                        onClick={()=>{}}
+                        onClick={handleSignOut}
                         >
                             <i className="fas fa-sign-out-alt"></i>
                             Sign Out
