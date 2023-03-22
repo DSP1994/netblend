@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import upload_image from '../../design/upload_image.jpg'
 
 import btnStyles from '../../design/Button.module.css'
 import appStyles from '../../App.module.css'
 import { Row, Col, Container, Button, Form } from 'react-bootstrap'
+
+function UploadCreateForm(){
+    const [error, setErrors] = useState({})
+}
 
 const UploadForm = () => {
   return (
