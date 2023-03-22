@@ -4,9 +4,29 @@ import styles from "../design/SignInUpForm.module.css";
 import btnStyles from "../design/Button.module.css";
 import appStyles from "../App.module.css"
 
+import { Row, Col, Container, Image } from 'react-bootstrap';
+
 const SignInForm = () => {
   return (
-    <div>SignInForm</div>
+    <Row className={styles.Row}>
+        <Col className='my-auto py-2 p-md-2' md={6}>
+            <Container className={`${appStyles.Content} p-4`}>
+                <h1 className={styles.Header}>Sign In</h1>
+                <p>Form</p>
+            </Container>
+            <Container className={`mt-5 ${appStyles.Content}`}>
+            <Link className={styles.Link} to="/signup">
+                Not a coffee addict yet? <span>Sign Up Here!</span>
+            </Link>
+            </Container>            
+        </Col>
+        <Col
+            md={6}
+            className={`my-auto d-none d-md-block p-2 ${styles.SignUpCol}`}>
+            <Image className={`${appStyles.FillerImage}`}
+            src={'https://res.cloudinary.com/dsp1994/image/upload/v1679421624/SignInUpPhoto_x7emxh.jpg'}/>
+        </Col>
+    </Row>
   )
 }
 
