@@ -1,7 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import axios from 'axios';
 import { axiosRes } from '../netblend_api/axiosDefaults';
-import { response } from 'msw';
 import { useHistory } from 'react-router-dom';
 
 export const CurrentUserContext = createContext()
@@ -26,6 +25,7 @@ export const CurrentUserProvider = ({children}) => {
   }, []);
 
   useMemo(() => {
+
     axiosRes.interceptors.response.use(
       (response) => response,
       async (error) => {
