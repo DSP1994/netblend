@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import axios from 'axios';
-import { axiosRes } from '../netblend_api/axiosDefaults';
+import { axiosReq, axiosRes } from '../netblend_api/axiosDefaults';
 import { useHistory } from 'react-router-dom';
 
 export const CurrentUserContext = createContext()
@@ -25,7 +25,25 @@ export const CurrentUserProvider = ({children}) => {
   }, []);
 
   useMemo(() => {
-
+    axiosReq.interceptors.request.use(
+      async (config) => {
+        try {
+          await axios.post('/dj-rest-auth/token/refresh/')
+        } catch (error) {
+          setCurrentUser((prevCurrentUser) => {
+            if (prevCurrentUser){
+              history.push('/signin')
+            }
+            return null;
+          })
+          return config;
+        }
+        return config;
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
     axiosRes.interceptors.response.use(
       (response) => response,
       async (error) => {
@@ -45,7 +63,7 @@ export const CurrentUserProvider = ({children}) => {
         return Promise.reject(error)
       }
     )
-  })
+  }, [history])
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
