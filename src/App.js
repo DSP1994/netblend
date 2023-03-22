@@ -5,6 +5,7 @@ import {Route, Switch} from 'react-router-dom'
 import './netblend_api/axiosDefaults'
 import SignUpForm from './pages/authentication/SignUpForm';
 import SignInForm from './pages/authentication/SignInForm';
+import UploadForm from './pages/uploads/UploadForm';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
               <Route exact path='/' render={() => <h1>Home Page Tester</h1>} />
               <Route exact path='/signin' render={() => <SignInForm />} />
               <Route exact path='/signup' render={() => <SignUpForm />} />
+              <Route exact path='/photo/upload' render={() => <UploadForm />} />
               <Route render={
                   ()=>
                   <p>
