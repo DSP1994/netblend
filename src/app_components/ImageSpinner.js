@@ -2,8 +2,7 @@ import React from 'react'
 import { Spinner } from 'react-bootstrap'
 import styles from '../design/ImageSpinner.module.css'
 
-const Image = () => {
-    const { spinner, src, message } = props
+const ImageSpinner = ({spinner, src, message}) => {
   return (
     <div className={`${styles.ImageSpinner} p-4`}>
         {spinner && <Spinner animation='border' />}
@@ -13,4 +12,4 @@ const Image = () => {
   )
 }
 
-export default Image;
+export default ImageSpinner;

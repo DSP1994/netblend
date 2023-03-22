@@ -4,6 +4,7 @@ import upload_image from '../../images/upload_image.jpg'
 import styles from '../../design/UploadForm.module.css'
 import btnStyles from '../../design/Button.module.css'
 import appStyles from '../../App.module.css'
+import ImageSpinner from '../../app_components/ImageSpinner'
 import { Row, Col, Container, Button, Form } from 'react-bootstrap'
 
 
@@ -36,7 +37,8 @@ const UploadForm = () => {
                         <Form.Label
                             className='d-flex justify-content-center'
                             htmlFor='image-upload'
-                        >Image
+                        >
+                            <ImageSpinner src={upload_image} message='tap me to upload your goodness' />
                         </Form.Label>
                     </Form.Group>
                     <div className='d-md-none'>{textfields}</div>
