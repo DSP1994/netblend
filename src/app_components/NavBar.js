@@ -17,8 +17,41 @@ const NavBar = () => {
                             Add Photo
                     </NavLink>        
     )
-    const loggedInIcons = <>{currentUser?.username}</>
-    const loggedOutIcons = ( <>
+    const loggedInIcons = 
+                <>
+                    <NavLink
+                        to='/followed'
+                        className={styles.NavLink}
+                        activeClassName={styles.Active}
+                        >
+                            <i className="fas fa-stream"></i>
+                            Followed Profiles
+                    </NavLink>
+                    <NavLink
+                        to='/liked'
+                        className={styles.NavLink}
+                        activeClassName={styles.Active}
+                        >
+                            <i className="fas fa-heart"></i>
+                            Liked Photos
+                    </NavLink>    
+                    <NavLink
+                        to='/'
+                        className={styles.NavLink}
+                        onClick={()=>{}}
+                        >
+                            <i className="fas fa-sign-out-alt"></i>
+                            Sign Out
+                    </NavLink>
+                    <NavLink
+                        to={`/profiles/${currentUser?.profile_id}`}
+                        className={styles.NavLink}
+                        >
+                            <img src={currentUser?.profile_image}/>
+                    </NavLink>                                                 
+                </>
+    const loggedOutIcons = ( 
+                <>
                     <NavLink
                         to='signin'
                         className={styles.NavLink}
@@ -35,7 +68,7 @@ const NavBar = () => {
                             <i className="fas fa-user-plus"></i>
                             Sign Up
                     </NavLink>
-                    </>
+                </>
     )
   return (
     <Navbar className={styles.NavBar} expand="sm" fixed="top">
