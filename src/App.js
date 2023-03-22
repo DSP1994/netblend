@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container'
 import {Route, Switch} from 'react-router-dom'
 import './netblend_api/axiosDefaults'
 import SignUpForm from './pages/authentication/SignUpForm';
+import SignInForm from './pages/authentication/SignInForm';
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
       <Container className={styles.TitlePages}>
         <Switch>
           <Route exact path='/' render={() => <h1>Home Page Tester</h1>} />
-          <Route exact path='/signin' render={() => <h1>Sign In Tester</h1>} />
+          <Route exact path='/signin' render={() => <SignInForm />} />
           <Route exact path='/signup' render={() => <SignUpForm />} />
           <Route render={
               ()=>
