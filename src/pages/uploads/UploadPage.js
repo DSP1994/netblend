@@ -29,13 +29,13 @@ const UploadPage = () => {
   return (
     <Row className='h-100'>
         <p>mobile</p>
-        <Upload {...upload.results[0]} setUpload={setUpload} />
-        <Col className='py-2 p-0 p-lg-2' lg={6}>
+        <Upload {...upload.results[0]} setUpload={setUpload} uploadPage/>
+        <Col className='py-2 p-0 p-lg-2' lg={8}>
             <Container className={appStyles.Content}>
                 Comment
             </Container>
         </Col>
-        <Col lg={3} className='d-none d-lg-block p-0 p-lg-2'>
+        <Col lg={4} className='d-none d-lg-block p-0 p-lg-2'>
             PC
         </Col>
     </Row>
