@@ -11,15 +11,40 @@ import { Row, Col, Container, Button, Form } from 'react-bootstrap'
 const UploadForm = () => {
     const [error, setErrors] = useState({})
 
+    const [uploadData, setUploadData] = useState({
+        caption: '',
+        description: '',
+        image: '',
+    });
+    const {caption, description, image} = uploadData;
+
+    const handleChange = (event) => {
+        setUploadData({
+            ...uploadData,
+            [event.target.name]: event.target.value,
+        });
+    };
+
     const textfields = (
         <div className='text-center'>
             <Form.Group>
-                <Form.Label>Caption Title</Form.Label>
-                <Form.Control type='text' name='caption_title'/>
+                <Form.Label>Caption</Form.Label>
+                <Form.Control
+                    type='text'
+                    name='caption'
+                    value={caption}
+                    onChange={handleChange}
+                />
             </Form.Group>
             <Form.Group>
                 <Form.Label>Description</Form.Label>
-                <Form.Control as='textarea' rows={4} name='description' />
+                <Form.Control
+                    as='textarea'
+                    rows={4}
+                    name='description'
+                    value={description}
+                    onChange={handleChange}
+                />
             </Form.Group>
             <Button
                 className={`${btnStyles.Button}`}
