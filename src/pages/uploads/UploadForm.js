@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useReq, useRef, useState } from 'react'
 import upload_image from '../../images/upload_image.jpg'
 
 import styles from '../../design/UploadForm.module.css'
@@ -6,6 +6,7 @@ import btnStyles from '../../design/Button.module.css'
 import appStyles from '../../App.module.css'
 import ImageSpinner from '../../app_components/ImageSpinner'
 import { Row, Col, Container, Button, Form, Image } from 'react-bootstrap'
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 
 
 const UploadForm = () => {
@@ -17,6 +18,9 @@ const UploadForm = () => {
         image: '',
     });
     const {caption, description, image} = uploadData;
+
+    const uploadInput = useRef(null)
+    const history = useHistory();
 
     const handleChange = (event) => {
         setUploadData({
@@ -32,6 +36,25 @@ const UploadForm = () => {
                 ...uploadData,
                 image: URL.createObjectURL(event.target.files[0])
             })
+        }
+    }
+
+    const handleSubmit = async (event) => {
+        event.preventDefault()
+        const formData = new FormData();
+
+        formData.append('caption', caption)
+        formData.append('description', description)
+        formData.append('image', ImageInput.current.files[0])
+
+        try {
+            const {data} = await axiosReq.post('/photos/', formData);
+            history.push(`/photos/${data.id}`)
+        } catch (error) {
+            console.log(error)
+            if (error.response?.status !== 401){
+                setErrors(error.response?.data)
+            }
         }
     }
 
@@ -70,7 +93,7 @@ const UploadForm = () => {
     )
 
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
         <Row>
             <Col className='py-2 p-0 p-md-2' md={8} lg={8}>
                 <Container
@@ -104,6 +127,7 @@ const UploadForm = () => {
                             id='image-upload'
                             accept='image/*'
                             onChange={handleChangeUpload}
+                            ref={uploadInput}
                         />
                     </Form.Group>
                     <div className='d-md-none'>{textfields}</div>
