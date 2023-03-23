@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import {Row, Col, Container} from "react-bootstrap"
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
+import { axiosReq } from '../../netblend_api/axiosDefaults'
 
 import appStyles from '../../App.module.css'
 
@@ -12,7 +13,9 @@ const UploadPage = () => {
     useEffect(() => {
         const handleMount = async () => {
             try {
-                
+                const [{data: upload}] = await Promise.all([
+                    axiosReq.get(`/posts/${id}`)
+                ])
             } catch (error) {
                 console.log(error)
             }
