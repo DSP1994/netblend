@@ -10,6 +10,7 @@ import Upload from './Upload';
 import NoResults from '../../images/no-results.jpg'
 import ImageSpinner from '../../app_components/ImageSpinner';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import { fetchMoreData } from '../../utils/utils';
 
 
 function UploadsPage({ message, filter = ''}) {
@@ -67,7 +68,7 @@ function UploadsPage({ message, filter = ''}) {
                         dataLength={posts.results.length}
                         loader={<ImageSpinner spinner />}
                         hasMore={!!posts.next}
-                        next={() => {}}
+                        next={() => fetchMoreData(posts, setPosts)}
                     />
 
                     ) : (
