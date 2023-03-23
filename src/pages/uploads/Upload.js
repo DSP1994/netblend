@@ -34,6 +34,22 @@ const Upload = (props) => {
         }
     }
 
+    const handleUnlike = async () => {
+        try {
+            await axiosRes.delete(`/likes/${like_id}`);
+            setPosts((prevPosts)=> ({
+                ...prevPosts,
+                results: prevPosts.results.map((post) => {
+                    return post.id === id
+                    ? {...post, likes_count: post.likes_count - 1, like_id: null }
+                    : post;
+                }),
+            }));
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
   return <Card className={styles.Post}>
     <Card.Body>
         <Media className='align-items-center justify-content-between'>
@@ -59,7 +75,7 @@ const Upload = (props) => {
                     <i className='far fa-heart' />
                 </OverlayTrigger>
             ) : like_id ? (
-                <span onClick={()=>{}}>
+                <span onClick={handleUnlike}>
                     <i className={`fas fa-heart ${styles.Heart}`} />
                 </span>
             ) : currentUser ? (
