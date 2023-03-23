@@ -15,11 +15,11 @@ const UploadForm = () => {
     const [error, setErrors] = useState({})
 
     const [uploadData, setUploadData] = useState({
-        caption: '',
-        description: '',
+        title: '',
+        content: '',
         image: '',
     });
-    const {caption, description, image} = uploadData;
+    const {title, content, image} = uploadData;
 
     const uploadInput = useRef(null)
     const history = useHistory();
@@ -45,15 +45,15 @@ const UploadForm = () => {
         event.preventDefault()
         const formData = new FormData();
 
-        formData.append('caption', caption)
-        formData.append('description', description)
+        formData.append('title', title)
+        formData.append('content', content)
         formData.append('image', uploadInput.current.files[0])
 
         try {
             const {data} = await axiosReq.post('/posts/', formData);
             history.push(`/posts/${data.id}`)
         } catch (error) {
-            console.log('help')
+            console.log('error here?')
             console.log(error)
             if (error.response?.status !== 401){
                 setErrors(error.response?.data)
@@ -64,28 +64,28 @@ const UploadForm = () => {
     const textfields = (
         <div className='text-center'>
             <Form.Group>
-                <Form.Label>Caption</Form.Label>
+                <Form.Label>title</Form.Label>
                 <Form.Control
                     type='text'
-                    name='caption'
-                    value={caption}
+                    name='title'
+                    value={title}
                     onChange={handleChange}
                 />
             </Form.Group>
             <Form.Group>
-                <Form.Label>Description</Form.Label>
+                <Form.Label>content</Form.Label>
                 <Form.Control
                     as='textarea'
                     rows={4}
-                    name='description'
-                    value={description}
+                    name='content'
+                    value={content}
                     onChange={handleChange}
                 />
             </Form.Group>
             <Button
                 className={`${btnStyles.Button}`}
-                onClick={() => {}}
-            >Restart
+                onClick={() => history.goBack()}
+            >Go back
             </Button>
             <Button
                 className={`${btnStyles.Button}`}
