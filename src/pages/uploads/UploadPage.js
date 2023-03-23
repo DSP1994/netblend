@@ -1,10 +1,12 @@
 import React from 'react'
 
 import {Row, Col, Container} from "react-bootstrap"
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
 
 import appStyles from '../../App.module.css'
 
 const UploadPage = () => {
+    const {id} = useParams();
   return (
     <Row className='h-100'>
         <p>mobile</p>
