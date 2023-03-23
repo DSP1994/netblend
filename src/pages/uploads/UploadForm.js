@@ -18,8 +18,8 @@ const UploadForm = () => {
                 <Form.Control type='text' name='caption_title'/>
             </Form.Group>
             <Form.Group>
-                <Form.Label>Details</Form.Label>
-                <Form.Control as='textarea' rows={4} name='details' />
+                <Form.Label>Description</Form.Label>
+                <Form.Control as='textarea' rows={4} name='description' />
             </Form.Group>
             <Button
                 className={`${btnStyles.Button}`}
