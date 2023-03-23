@@ -1,9 +1,11 @@
 import React from 'react'
+import styles from '../../design/Upload.module.css'
+
 
 const Upload = () => {
   return (
-    <div>Upload</div>
+    <div>Test Test Test</div>
   )
 }
 
-export default Upload
+export default Upload;
