@@ -7,6 +7,7 @@ import SignUpForm from './pages/authentication/SignUpForm';
 import SignInForm from './pages/authentication/SignInForm';
 import UploadForm from './pages/uploads/UploadForm';
 import UploadPage from './pages/uploads/UploadPage';
+import UploadsPage from './pages/uploads/UploadsPage';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
           <NavBar />
           <Container className={styles.TitlePages}>
             <Switch>
-              <Route exact path='/' render={() => <h1>Home Page Tester</h1>} />
+              <Route exact path='/' render={() => <UploadsPage message="No Results Found." />} />
               <Route exact path='/signin' render={() => <SignInForm />} />
               <Route exact path='/signup' render={() => <SignUpForm />} />
               <Route exact path='/posts/upload' render={() => <UploadForm />} />

@@ -3,9 +3,7 @@ import { Col, Row, Container, Form } from 'react-bootstrap'
 
 import appStyles from '../../App.module.css'
 
-const UploadsPage = () => {
-
-
+function UploadsPage() {
   return (
     <Row className='h-100'>
         <Col className='py-2 p-0 p-lg-2' lg={8}>
