@@ -16,11 +16,15 @@ const UploadPage = () => {
                 const [{data: upload}] = await Promise.all([
                     axiosReq.get(`/posts/${id}`)
                 ])
+                setUpload({results: [upload]})
+                console.log(upload)
             } catch (error) {
                 console.log(error)
             }
         }
-    })
+
+        handleMount()
+    }, [id])
   return (
     <Row className='h-100'>
         <p>mobile</p>
