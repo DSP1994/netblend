@@ -73,6 +73,7 @@ const UploadForm = () => {
                         >
                             <ImageSpinner src={upload_image} message='tap me to upload your goodness' />
                         </Form.Label>
+                        <Form.File id='image-upload' accept='image/*'/>
                     </Form.Group>
                     <div className='d-md-none'>{textfields}</div>
                 </Container>
