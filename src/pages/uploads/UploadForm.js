@@ -25,6 +25,16 @@ const UploadForm = () => {
         });
     };
 
+    const handleChangeUpload = (event) => {
+        if (event.target.files.length){
+            URL.revokeObjectURL(image)
+            setUploadData({
+                ...uploadData,
+                image: URL.createObjectURL(event.target.files[0])
+            })
+        }
+    }
+
     const textfields = (
         <div className='text-center'>
             <Form.Group>
@@ -73,7 +83,11 @@ const UploadForm = () => {
                         >
                             <ImageSpinner src={upload_image} message='tap me to upload your goodness' />
                         </Form.Label>
-                        <Form.File id='image-upload' accept='image/*'/>
+                        <Form.File
+                            id='image-upload'
+                            accept='image/*'
+                            onChange={handleChangeUpload}
+                        />
                     </Form.Group>
                     <div className='d-md-none'>{textfields}</div>
                 </Container>
