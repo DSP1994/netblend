@@ -4,6 +4,7 @@ import { useCurrentUser } from '../../contexts/CurrentUserContext'
 import { Card, Media, OverlayTrigger, Tooltip } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Avatar from '../../app_components/Avatar'
+import { axiosRes } from '../../netblend_api/axiosDefaults'
 
 
 const Upload = (props) => {
@@ -11,11 +12,28 @@ const Upload = (props) => {
         id, owner, profile_id, profile_image, 
         comments_count, likes_count, like_id, 
         title, content, image, updated_at,
-        uploadPage,
+        uploadPage, setUploads
     } = props
 
     const currentUser = useCurrentUser()
     const is_owner = currentUser?.username === owner
+
+    const handleLike = async () => {
+        try {
+            const {data} = await axiosRes.upload('/likes/', {upload:id});
+            setUploads((prevPosts) => ({
+                ...prevPosts,
+                results: prevPosts.results.map((upload) => {
+                    return upload.id === id
+                    ? {...upload, likes_count: upload.likes_count + 1, like_id: data.id}
+                    :upload;
+                })
+            }))
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
   return <Card className={styles.Upload}>
     <Card.Body>
         <Media className='align-items-center justify-content-between'>
@@ -45,12 +63,12 @@ const Upload = (props) => {
                     <i className={`fas fa-heart ${styles.Heart}`} />
                 </span>
             ) : currentUser ? (
-                <span onClick={()=>{}}>
+                <span onClick={handleLike}>
                     <i className={`far fa-heart ${styles.HeartOutline}`} />
                 </span>
             ) : (
                 <OverlayTrigger placement='top' overlay={<Tooltip>Tasty huh..! Log in to like it!</Tooltip>}>
-                    <I className='far fa-heart' />
+                    <i className='far fa-heart' />
                 </OverlayTrigger>
             )}
             {likes_count}
