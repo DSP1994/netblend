@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../../design/Upload.module.css'
+import styles from '../../design/Post.module.css'
 import { useCurrentUser } from '../../contexts/CurrentUserContext'
 import { Card, Media, OverlayTrigger, Tooltip } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
@@ -12,7 +12,7 @@ const Upload = (props) => {
         id, owner, profile_id, profile_image, 
         comments_count, likes_count, like_id, 
         title, content, image, updated_at,
-        uploadPage, setUploads
+        postPage, setPosts
     } = props
 
     const currentUser = useCurrentUser()
@@ -20,13 +20,13 @@ const Upload = (props) => {
 
     const handleLike = async () => {
         try {
-            const {data} = await axiosRes.upload('/likes/', {upload:id});
-            setUploads((prevPosts) => ({
+            const {data} = await axiosRes.post('/likes/', {post:id});
+            setPosts((prevPosts) => ({
                 ...prevPosts,
-                results: prevPosts.results.map((upload) => {
-                    return upload.id === id
-                    ? {...upload, likes_count: upload.likes_count + 1, like_id: data.id}
-                    :upload;
+                results: prevPosts.results.map((post) => {
+                    return post.id === id
+                    ? {...post, likes_count: post.likes_count + 1, like_id: data.id}
+                    :post;
                 })
             }))
         } catch (error) {
@@ -34,7 +34,7 @@ const Upload = (props) => {
         }
     }
 
-  return <Card className={styles.Upload}>
+  return <Card className={styles.Post}>
     <Card.Body>
         <Media className='align-items-center justify-content-between'>
             <Link to={`/profiles/${profile_id}`}>
@@ -43,7 +43,7 @@ const Upload = (props) => {
             </Link>
             <div className='d-flex align-items-center'>
                 <span>{updated_at}</span>
-                {is_owner && uploadPage && '...'}
+                {is_owner && postPage && '...'}
             </div>
         </Media>
     </Card.Body>
@@ -53,7 +53,7 @@ const Upload = (props) => {
     <Card.Body>
         {title && <Card.Title className='text-center'>{title}</Card.Title>}
         {content && <Card.Text>{content}</Card.Text>}
-        <div className={styles.UploadBar}>
+        <div className={styles.PostBar}>
             {is_owner ? (
                 <OverlayTrigger placement='top' overlay={<Tooltip>Vain! Get your friends to like it!</Tooltip>}>
                     <i className='far fa-heart' />

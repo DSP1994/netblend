@@ -9,16 +9,16 @@ import Upload from './Upload'
 
 const UploadPage = () => {
     const {id} = useParams();
-    const [upload, setUpload] = useState({ results: []})
+    const [post, setPost] = useState({ results: []})
 
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const [{data: upload}] = await Promise.all([
+                const [{data: post}] = await Promise.all([
                     axiosReq.get(`/posts/${id}`)
                 ])
-                setUpload({results: [upload]})
-                console.log(upload)
+                setPost({results: [post]})
+                console.log(post)
             } catch (error) {
                 console.log(error)
             }
@@ -29,7 +29,7 @@ const UploadPage = () => {
   return (
     <Row className='h-100'>
         <p>mobile</p>
-        <Upload {...upload.results[0]} setUpload={setUpload} uploadPage/>
+        <Upload {...post.results[0]} setPost={setPost} setPage/>
         <Col className='py-2 p-0 p-lg-2' lg={8}>
             <Container className={appStyles.Content}>
                 Comment

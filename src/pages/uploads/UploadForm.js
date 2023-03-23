@@ -14,28 +14,28 @@ import axiosReq from 'axios'
 const UploadForm = () => {
     const [errors, setErrors] = useState({})
 
-    const [uploadData, setUploadData] = useState({
+    const [postData, setPostData] = useState({
         title: '',
         content: '',
         image: '',
     });
-    const {title, content, image} = uploadData;
+    const {title, content, image} = postData;
 
-    const uploadInput = useRef(null)
+    const postInput = useRef(null)
     const history = useHistory();
 
     const handleChange = (event) => {
-        setUploadData({
-            ...uploadData,
+        setPostData({
+            ...postData,
             [event.target.name]: event.target.value,
         });
     };
 
-    const handleChangeUpload = (event) => {
+    const handleChangePost = (event) => {
         if (event.target.files.length){
             URL.revokeObjectURL(image)
-            setUploadData({
-                ...uploadData,
+            setPostData({
+                ...postData,
                 image: URL.createObjectURL(event.target.files[0])
             })
         }
@@ -47,7 +47,7 @@ const UploadForm = () => {
 
         formData.append('title', title)
         formData.append('content', content)
-        formData.append('image', uploadInput.current.files[0])
+        formData.append('image', postInput.current.files[0])
 
         try {
             const {data} = await axiosReq.post('/posts/', formData);
@@ -139,8 +139,8 @@ const UploadForm = () => {
                         <Form.File
                             id='image-upload'
                             accept='image/*'
-                            onChange={handleChangeUpload}
-                            ref={uploadInput}
+                            onChange={handleChangePost}
+                            ref={postInput}
                         />
                     </Form.Group>
                     {errors?.image?.map((message, idx) => (

@@ -1,4 +1,4 @@
-.Upload {
+.Post {
     background-color: #643E36;
     border: 1px solid #3e2622;
     border-radius: 2px;
@@ -6,7 +6,7 @@
     text-align: center;
 }
 
-.Upload figure,
+.Post figure,
 h5 {
     margin: 0 0;
 }
