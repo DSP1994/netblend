@@ -13,6 +13,14 @@ const UploadForm = () => {
 
     const textfields = (
         <div className='text-center'>
+            <Form.Group>
+                <Form.Label>Caption Title</Form.Label>
+                <Form.Control type='text' name='caption_title'/>
+            </Form.Group>
+            <Form.Group>
+                <Form.Label>Details</Form.Label>
+                <Form.Control as='textarea' rows={4} name='details' />
+            </Form.Group>
             <Button
                 className={`${btnStyles.Button}`}
                 onClick={() => {}}
