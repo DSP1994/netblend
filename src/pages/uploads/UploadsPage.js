@@ -1,6 +1,8 @@
 import React from 'react'
 import { Col, Row, Container, Form } from 'react-bootstrap'
 
+import appStyles from '../../App.module.css'
+
 const UploadsPage = () => {
 
 
