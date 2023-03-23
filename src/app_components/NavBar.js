@@ -24,7 +24,7 @@ const NavBar = () => {
     }
     const addPostIcon = (
                     <NavLink
-                        to='/photo/upload'
+                        to='/posts/upload'
                         className={styles.NavLink}
                         activeClassName={styles.Active}
                         >

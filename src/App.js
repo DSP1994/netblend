@@ -16,7 +16,7 @@ function App() {
               <Route exact path='/' render={() => <h1>Home Page Tester</h1>} />
               <Route exact path='/signin' render={() => <SignInForm />} />
               <Route exact path='/signup' render={() => <SignUpForm />} />
-              <Route exact path='/photo/upload' render={() => <UploadForm />} />
+              <Route exact path='/posts/upload' render={() => <UploadForm />} />
               <Route render={
                   ()=>
                   <p>

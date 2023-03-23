@@ -1,4 +1,4 @@
-import React, { useReq, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import upload_image from '../../images/upload_image.jpg'
 
 import styles from '../../design/UploadForm.module.css'
@@ -7,6 +7,8 @@ import appStyles from '../../App.module.css'
 import ImageSpinner from '../../app_components/ImageSpinner'
 import { Row, Col, Container, Button, Form, Image } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
+
+import axiosReq from 'axios'
 
 
 const UploadForm = () => {
@@ -45,12 +47,13 @@ const UploadForm = () => {
 
         formData.append('caption', caption)
         formData.append('description', description)
-        formData.append('image', ImageInput.current.files[0])
+        formData.append('image', uploadInput.current.files[0])
 
         try {
-            const {data} = await axiosReq.post('/photos/', formData);
-            history.push(`/photos/${data.id}`)
+            const {data} = await axiosReq.post('/posts/', formData);
+            history.push(`/posts/${data.id}`)
         } catch (error) {
+            console.log('help')
             console.log(error)
             if (error.response?.status !== 401){
                 setErrors(error.response?.data)
