@@ -5,7 +5,7 @@ import styles from '../../design/UploadForm.module.css'
 import btnStyles from '../../design/Button.module.css'
 import appStyles from '../../App.module.css'
 import ImageSpinner from '../../app_components/ImageSpinner'
-import { Row, Col, Container, Button, Form } from 'react-bootstrap'
+import { Row, Col, Container, Button, Form, Image } from 'react-bootstrap'
 
 
 const UploadForm = () => {
@@ -76,13 +76,30 @@ const UploadForm = () => {
                 <Container
                     className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
                 >
-                    <Form.Group>
-                        <Form.Label
-                            className='d-flex justify-content-center'
-                            htmlFor='image-upload'
-                        >
-                            <ImageSpinner src={upload_image} message='tap me to upload your goodness' />
-                        </Form.Label>
+                    <Form.Group className='text-center'>
+                        {image ? (
+                            <>
+                                <figure>
+                                    <Image className={appStyles.Image} src={image} rounded />
+                                </figure>
+                                <div>
+                                    <Form.Label
+                                        className={`${btnStyles.Button} btn`}
+                                        htmlFor='image-upload'
+                                    >
+                                        Change Upload
+                                    </Form.Label>
+                                </div>
+                            </>
+                        ) : (
+                            <Form.Label
+                                className='d-flex justify-content-center'
+                                htmlFor='image-upload'
+                            >
+                                <ImageSpinner src={upload_image} message='tap me to upload your goodness' />
+                            </Form.Label>                            
+                        )}
+
                         <Form.File
                             id='image-upload'
                             accept='image/*'
