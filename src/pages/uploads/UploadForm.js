@@ -5,7 +5,7 @@ import styles from '../../design/UploadForm.module.css'
 import btnStyles from '../../design/Button.module.css'
 import appStyles from '../../App.module.css'
 import ImageSpinner from '../../app_components/ImageSpinner'
-import { Row, Col, Container, Button, Form, Image } from 'react-bootstrap'
+import { Row, Col, Container, Button, Form, Image, Alert } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 
 import axiosReq from 'axios'
@@ -64,7 +64,7 @@ const UploadForm = () => {
     const textfields = (
         <div className='text-center'>
             <Form.Group>
-                <Form.Label>title</Form.Label>
+                <Form.Label>Caption</Form.Label>
                 <Form.Control
                     type='text'
                     name='title'
@@ -72,8 +72,13 @@ const UploadForm = () => {
                     onChange={handleChange}
                 />
             </Form.Group>
+            {errors?.title?.map((message, idx) => (
+                <Alert variant='warning' key={idx}>
+                    {message}
+                </Alert>
+            ))}
             <Form.Group>
-                <Form.Label>content</Form.Label>
+                <Form.Label>Description</Form.Label>
                 <Form.Control
                     as='textarea'
                     rows={4}
@@ -82,6 +87,11 @@ const UploadForm = () => {
                     onChange={handleChange}
                 />
             </Form.Group>
+            {errors?.content?.map((message, idx) => (
+                <Alert variant='warning' key={idx}>
+                    {message}
+                </Alert>
+            ))}            
             <Button
                 className={`${btnStyles.Button}`}
                 onClick={() => history.goBack()}
@@ -133,6 +143,11 @@ const UploadForm = () => {
                             ref={uploadInput}
                         />
                     </Form.Group>
+                    {errors?.image?.map((message, idx) => (
+                        <Alert variant='warning' key={idx}>
+                            {message}
+                        </Alert>
+                    ))}                    
                     <div className='d-md-none'>{textfields}</div>
                 </Container>
             </Col>
