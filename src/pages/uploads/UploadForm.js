@@ -12,7 +12,7 @@ import axiosReq from 'axios'
 
 
 const UploadForm = () => {
-    const [error, setErrors] = useState({})
+    const [errors, setErrors] = useState({})
 
     const [uploadData, setUploadData] = useState({
         title: '',

@@ -6,6 +6,7 @@ import './netblend_api/axiosDefaults'
 import SignUpForm from './pages/authentication/SignUpForm';
 import SignInForm from './pages/authentication/SignInForm';
 import UploadForm from './pages/uploads/UploadForm';
+import UploadPage from './pages/uploads/UploadPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
               <Route exact path='/signin' render={() => <SignInForm />} />
               <Route exact path='/signup' render={() => <SignUpForm />} />
               <Route exact path='/posts/upload' render={() => <UploadForm />} />
+              <Route exact path='/posts/:id' render={()=> <UploadPage />} />
               <Route render={
                   ()=>
                   <p>
