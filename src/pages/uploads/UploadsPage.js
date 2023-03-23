@@ -9,6 +9,7 @@ import Upload from './Upload';
 
 import NoResults from '../../images/no-results.jpg'
 import ImageSpinner from '../../app_components/ImageSpinner';
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 
 function UploadsPage({ message, filter = ''}) {
@@ -56,13 +57,24 @@ function UploadsPage({ message, filter = ''}) {
             </Form>
             {hasLoaded ? (
                 <>
-                    {posts.results.length
-                        ? posts.results.map((post) => (
+                    {posts.results.length ? (
+                    <InfiniteScroll 
+                        children={
+                        posts.results.map((post) => (
                             <Upload key={post.id} {...post} setPosts={setPosts} />
                         ))
-                     : <Container className={appStyles.Content}>
-                        <ImageSpinner src={NoResults} message={message}/>
-                       </Container>}
+                        }
+                        dataLength={posts.results.length}
+                        loader={<ImageSpinner spinner />}
+                        hasMore={!!posts.next}
+                        next={() => {}}
+                    />
+
+                    ) : (
+                        <Container className={appStyles.Content}>
+                            <ImageSpinner src={NoResults} message={message}/>
+                        </Container>
+                    )}
                 </>
             ) : (
                 <Container className={appStyles.Content}>
