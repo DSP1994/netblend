@@ -3,6 +3,7 @@ import styles from '../../design/Upload.module.css'
 import { useCurrentUser } from '../../contexts/CurrentUserContext'
 import { Card, Media } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import Avatar from '../../app_components/Avatar'
 
 
 const Upload = (props) => {
@@ -18,8 +19,11 @@ const Upload = (props) => {
     <Card.Body>
         <Media className='align-items-center justify-content-between'>
             <Link to={`/profiles/${profile_id}`}>
+                <Avatar src={profile_image} height={55}/>
+                {owner}
             </Link>
         </Media>
+        
     </Card.Body>
   </Card>
 }
