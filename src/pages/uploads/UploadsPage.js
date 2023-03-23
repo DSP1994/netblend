@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Col, Row, Container, Form } from 'react-bootstrap'
 import { useLocation } from 'react-router';
 
+import styles from '../../design/UploadsPage.module.css'
 import appStyles from '../../App.module.css'
 import { axiosReq } from '../../netblend_api/axiosDefaults';
 import Upload from './Upload';
@@ -15,10 +16,12 @@ function UploadsPage({ message, filter = ''}) {
     const [hasLoaded, setHasLoaded] = useState(false);
     const {pathname} = useLocation();
 
+    const [query, setQuery] = useState('');
+
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const {data} = await axiosReq.get(`/posts/?${filter}`)
+                const {data} = await axiosReq.get(`/posts/?${filter}search=${query}`)
                 setPosts(data)
                 setHasLoaded(true)
             } catch (error) {
@@ -28,12 +31,23 @@ function UploadsPage({ message, filter = ''}) {
 
         setHasLoaded(false)
         fetchPosts()
-    }, [filter, pathname])
+    }, [filter, query, pathname])
 
   return (
     <Row className='h-100'>
         <Col className='py-2 p-0 p-lg-2' lg={8}>
             <p>profs for mob</p>
+            <i className={`fas fa-search ${styles.SearchIcon}`} />
+            <Form
+                className={styles.SerachBar}
+                onSubmit={(event) => event.preventDefault()}>
+                  <Form.Control 
+                  type='text'
+                  className='mr-sm-2'
+                  placeholder='Search Uploads'
+                  value={query}
+                  onChange={(event) => setQuery(event.target.value)}/>  
+            </Form>
             {hasLoaded ? (
                 <>
                     {posts.results.length
