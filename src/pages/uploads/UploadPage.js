@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import { axiosReq } from '../../netblend_api/axiosDefaults'
 
 import appStyles from '../../App.module.css'
+import Upload from './Upload'
 
 const UploadPage = () => {
     const {id} = useParams();
@@ -28,7 +29,7 @@ const UploadPage = () => {
   return (
     <Row className='h-100'>
         <p>mobile</p>
-        <p>upload</p>
+        <Upload {...upload.results[0]} setUpload={setUpload} />
         <Col className='py-2 p-0 p-lg-2' lg={6}>
             <Container className={appStyles.Content}>
                 Comment
