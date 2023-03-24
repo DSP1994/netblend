@@ -7,7 +7,6 @@ import styles from '../design/OwnerDropdown.module.css'
 const EditDelete = React.forwardRef(({ onClick }, ref) => (
   <i
     className='fas fa-ellipsis-v'
-    href=""
     ref={ref}
     onClick={(e) => {
       e.preventDefault();
@@ -18,21 +17,15 @@ const EditDelete = React.forwardRef(({ onClick }, ref) => (
 
 export const OwnerDropdown = () => {
     return (
-        <Dropdown>
-            <Dropdown.Toggle as={EditDelete} id="dropdown-custom-components">
-                Custom toggle
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu>
+        <Dropdown className='ml-auto' drop='left'>
+            <Dropdown.Toggle as={EditDelete}/>
+            <Dropdown.Menu 
+              className='text-center'
+              popperConfig={{ strategy: "fixed" }}
+            >
                 <Dropdown.Item eventKey="1">Red</Dropdown.Item>
                 <Dropdown.Item eventKey="2">Blue</Dropdown.Item>
-                <Dropdown.Item eventKey="3" active>
-                    Orange
-                </Dropdown.Item>
-                <Dropdown.Item eventKey="1">Red-Orange</Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
     )
 }
-
-// popperConfig={{ strategy: "fixed" }}
