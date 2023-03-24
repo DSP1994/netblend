@@ -4,18 +4,16 @@ import { Dropdown } from 'react-bootstrap';
 import styles from '../design/Dropdown.module.css'
 // The forwardRef is important!!
 // Dropdown needs access to the DOM node in order to position the Menu
-const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
-  <a
+const EditDelete = React.forwardRef(({ onClick }) => (
+  <i
+    className='fas fa-ellipsis-v'
     href=""
     ref={ref}
     onClick={(e) => {
       e.preventDefault();
       onClick(e);
     }}
-  >
-    {children}
-    &#x25bc;
-  </a>
+  />
 ));
 
 // forwardRef again here!
