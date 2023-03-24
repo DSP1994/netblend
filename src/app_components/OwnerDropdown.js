@@ -1,10 +1,10 @@
 import React from 'react';
 import { Dropdown } from 'react-bootstrap';
 
-import styles from '../design/Dropdown.module.css'
+import styles from '../design/OwnerDropdown.module.css'
 // The forwardRef is important!!
 // Dropdown needs access to the DOM node in order to position the Menu
-const EditDelete = React.forwardRef(({ onClick }) => (
+const EditDelete = React.forwardRef(({ onClick }, ref) => (
   <i
     className='fas fa-ellipsis-v'
     href=""
@@ -16,7 +16,7 @@ const EditDelete = React.forwardRef(({ onClick }) => (
   />
 ));
 
-export const Dropdown = () => {
+export const OwnerDropdown = () => {
     return (
         <Dropdown>
             <Dropdown.Toggle as={EditDelete} id="dropdown-custom-components">
@@ -35,4 +35,4 @@ export const Dropdown = () => {
     )
 }
 
-popperConfig={{ strategy: "fixed" }}
+// popperConfig={{ strategy: "fixed" }}
