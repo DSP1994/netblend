@@ -2,7 +2,7 @@ import React from 'react'
 import styles from '../../design/Post.module.css'
 import { useCurrentUser } from '../../contexts/CurrentUserContext'
 import { Card, Media, OverlayTrigger, Tooltip } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import Avatar from '../../app_components/Avatar'
 import { axiosRes } from '../../netblend_api/axiosDefaults'
 import { OwnerDropdown } from '../../app_components/OwnerDropdown'
@@ -17,7 +17,21 @@ const Upload = (props) => {
     } = props
 
     const currentUser = useCurrentUser()
-    const is_owner = currentUser?.username === owner
+    const is_owner = currentUser?.username === owner;
+    const history = useHistory();
+
+    const handleEdit = () => {
+        history.push(`/posts/${id}/edit`)
+    }
+
+    const handleDelete = async () => {
+        try {
+            await axiosRes.delete(`/posts/${id}/`)
+            history.goBack();
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     const handleLike = async () => {
         try {
@@ -60,7 +74,12 @@ const Upload = (props) => {
             </Link>
             <div className='d-flex align-items-center'>
                 <span>{updated_at}</span>
-                {is_owner && postPage && <OwnerDropdown />}
+                {is_owner && postPage && (
+                    <OwnerDropdown 
+                    handleEdit={handleEdit}
+                    handleDelete={handleDelete}
+                    />
+                )}
             </div>
         </Media>
     </Card.Body>

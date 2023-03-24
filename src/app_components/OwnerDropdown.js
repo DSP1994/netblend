@@ -15,7 +15,7 @@ const EditDelete = React.forwardRef(({ onClick }, ref) => (
   />
 ));
 
-export const OwnerDropdown = () => {
+export const OwnerDropdown = ({handleEdit, handleDelete}) => {
     return (
         <Dropdown className='ml-auto' drop='left'>
             <Dropdown.Toggle as={EditDelete}/>
@@ -25,14 +25,14 @@ export const OwnerDropdown = () => {
             >
                 <Dropdown.Item
                   className={styles.OwnerDropdown}
-                  onClick={() => {}}
+                  onClick={handleEdit}
                   aria-label='edit'
                 >
                   <i className='fas fa-edit'/>
                 </Dropdown.Item>
                 <Dropdown.Item
                   className={styles.OwnerDropdown}
-                  onClick={() => {}}
+                  onClick={handleDelete}
                   aria-label='delete'
                 >
                   <i className='fas fa-trash-alt'/>
