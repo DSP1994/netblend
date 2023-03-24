@@ -16,7 +16,7 @@ const EditDelete = React.forwardRef(({ onClick }) => (
   />
 ));
 
-export const MoreDropdown = () => {
+export const Dropdown = () => {
     return (
         <Dropdown>
             <Dropdown.Toggle as={EditDelete} id="dropdown-custom-components">

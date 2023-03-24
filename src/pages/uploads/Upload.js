@@ -5,6 +5,7 @@ import { Card, Media, OverlayTrigger, Tooltip } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Avatar from '../../app_components/Avatar'
 import { axiosRes } from '../../netblend_api/axiosDefaults'
+import { Dropdown } from '../../app_components/Dropdown'
 
 
 const Upload = (props) => {
@@ -59,7 +60,7 @@ const Upload = (props) => {
             </Link>
             <div className='d-flex align-items-center'>
                 <span>{updated_at}</span>
-                {is_owner && postPage && '...'}
+                {is_owner && postPage && <Dropdown />}
             </div>
         </Media>
     </Card.Body>
