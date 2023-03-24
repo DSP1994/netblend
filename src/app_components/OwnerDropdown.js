@@ -23,8 +23,20 @@ export const OwnerDropdown = () => {
               className='text-center'
               popperConfig={{ strategy: "fixed" }}
             >
-                <Dropdown.Item eventKey="1">Red</Dropdown.Item>
-                <Dropdown.Item eventKey="2">Blue</Dropdown.Item>
+                <Dropdown.Item
+                  className={styles.OwnerDropdown}
+                  onClick={() => {}}
+                  aria-label='edit'
+                >
+                  <i className='fas fa-edit'/>
+                </Dropdown.Item>
+                <Dropdown.Item
+                  className={styles.OwnerDropdown}
+                  onClick={() => {}}
+                  aria-label='delete'
+                >
+                  <i className='fas fa-trash-alt'/>
+                </Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
     )
