@@ -19,11 +19,12 @@ function UploadPage() {
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const [{data: post}] = await Promise.all([
-                    axiosReq.get(`/posts/${id}`)
+                const [{data: post}, {data: comments}] = await Promise.all([
+                    axiosReq.get(`/posts/${id}`),
+                    axiosReq.get(`/comments/?post=${id}`)
                 ])
                 setPost({results: [post]})
-                console.log(post)
+                setComments(comments)
             } catch (error) {
                 console.log(error)
             }
