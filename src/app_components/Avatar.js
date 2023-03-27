@@ -10,7 +10,7 @@ const Avatar = (props) => {
             src={src}
             height={height}
             width={height}
-            alt='profile image'
+            alt='profile'
         />
         {text}
         

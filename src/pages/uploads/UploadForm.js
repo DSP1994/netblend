@@ -21,7 +21,7 @@ function UploadForm() {
     });
     const {title, content, image} = postData;
 
-    const postInput = useRef(null)
+    const imageInput = useRef(null)
     const history = useHistory();
 
     const handleChange = (event) => {
@@ -47,7 +47,7 @@ function UploadForm() {
 
         formData.append('title', title)
         formData.append('content', content)
-        formData.append('image', postInput.current.files[0])
+        formData.append('image', imageInput.current.files[0])
 
         try {
             const {data} = await axiosReq.post('/posts/', formData);
@@ -140,7 +140,7 @@ function UploadForm() {
                             id='image-upload'
                             accept='image/*'
                             onChange={handleChangePost}
-                            ref={postInput}
+                            ref={imageInput}
                         />
                     </Form.Group>
                     {errors?.image?.map((message, idx) => (

@@ -21,7 +21,7 @@ function UploadEditForm() {
     });
     const {title, content, image} = postData;
 
-    const postInput = useRef(null)
+    const imageInput = useRef(null)
     const history = useHistory();
     const {id} = useParams();
 
@@ -63,11 +63,12 @@ function UploadEditForm() {
 
         formData.append('title', title)
         formData.append('content', content)
-        formData.append('image', postInput.current.files[0])
-
+        if (imageInput?.current?.files[0]){
+            formData.append('image', imageInput.current.files[0])
+        }
         try {
-            const {data} = await axiosReq.post('/posts/', formData);
-            history.push(`/posts/${data.id}`)
+            await axiosReq.put(`/posts/${id}/`, formData);
+            history.push(`/posts/${id}`);
         } catch (error) {
             console.log('error here?')
             console.log(error)
@@ -156,7 +157,7 @@ function UploadEditForm() {
                             id='image-upload'
                             accept='image/*'
                             onChange={handleChangePost}
-                            ref={postInput}
+                            ref={imageInput}
                         />
                     </Form.Group>
                     {errors?.image?.map((message, idx) => (

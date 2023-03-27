@@ -18,6 +18,7 @@ const Upload = (props) => {
 
     const currentUser = useCurrentUser()
     const is_owner = currentUser?.username === owner;
+    console.log(is_owner)
     const history = useHistory();
 
     const handleEdit = () => {

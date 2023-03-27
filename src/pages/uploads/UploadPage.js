@@ -29,7 +29,7 @@ function UploadPage() {
   return (
     <Row className='h-100'>
         <p>mobile</p>
-        <Upload {...post.results[0]} setPost={setPost} setPage/>
+        <Upload {...post.results[0]} setPost={setPost} postPage/>
         <Col className='py-2 p-0 p-lg-2' lg={8}>
             <Container className={appStyles.Content}>
                 Comment

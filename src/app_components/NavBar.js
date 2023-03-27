@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React from 'react'
 import { Container, Navbar, Nav } from 'react-bootstrap';
 import Coffee_Bean_Logo from '../images/Coffee_Bean_Logo.png';
 import styles from '../design/NavBar.module.css';
