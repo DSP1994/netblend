@@ -9,6 +9,7 @@ import UploadForm from './pages/uploads/UploadForm';
 import UploadPage from './pages/uploads/UploadPage';
 import UploadsPage from './pages/uploads/UploadsPage';
 import { useCurrentUser } from './contexts/CurrentUserContext';
+import UploadEditForm from './pages/uploads/UploadEditForm';
 
 function App() {
   const currentUser = useCurrentUser();
@@ -52,6 +53,7 @@ function App() {
               <Route exact path='/signup' render={() => <SignUpForm />} />
               <Route exact path='/posts/upload' render={() => <UploadForm />} />
               <Route exact path='/posts/:id' render={()=> <UploadPage />} />
+              <Route exact path='/posts/:id/edit' render={() => <UploadEditForm />} />
               <Route render={
                   ()=>
                   <p>
