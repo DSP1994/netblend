@@ -38,7 +38,6 @@ function UploadsPage({ message, filter = ''}) {
         return () => {
             clearTimeout(timer)
         }
-        fetchPosts()
     }, [filter, query, pathname])
 
   return (
