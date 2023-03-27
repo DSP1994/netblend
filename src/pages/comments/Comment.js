@@ -19,6 +19,8 @@ const Comment = (props) => {
         setComments,
     } = props;
 
+    const [showEditForm, setShowEditForm] = useState(false);
+
     const currentUser = useCurrentUser()
     const is_owner = currentUser?.username === owner;
 
@@ -50,10 +52,17 @@ const Comment = (props) => {
             <Media.Body className='align-self-center ml-2'>
                 <span className={styles.Owner}>{owner}</span>
                 <span className={styles.Date}>{updated_at}</span>
-                <p>{content}</p>
+                {showEditForm ? (
+                    <CommentEditForm />
+                ) : (
+                    <p>{content}</p>
+                )}
             </Media.Body>
-            {is_owner && (
-                <OwnerDropdown handleEdit={() => {}} handleDelete={handleDelete}/>
+            {is_owner && !showEditForm && (
+                <OwnerDropdown
+                    handleEdit={() => setShowEditForm(true)}
+                    handleDelete={handleDelete}
+                />
             )}
         </Media>
     </div>
