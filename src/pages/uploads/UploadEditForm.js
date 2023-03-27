@@ -117,7 +117,7 @@ function UploadEditForm() {
             <Button
                 className={`${btnStyles.Button}`}
                 type='submit'
-            >Upload
+            >Save
             </Button>
         </div>   
     )
@@ -130,29 +130,17 @@ function UploadEditForm() {
                     className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
                 >
                     <Form.Group className='text-center'>
-                        {image ? (
-                            <>
-                                <figure>
-                                    <Image className={appStyles.Image} src={image} rounded />
-                                </figure>
-                                <div>
-                                    <Form.Label
-                                        className={`${btnStyles.Button} btn`}
-                                        htmlFor='image-upload'
-                                    >
-                                        Change Upload
-                                    </Form.Label>
-                                </div>
-                            </>
-                        ) : (
+                        <figure>
+                            <Image className={appStyles.Image} src={image} rounded />
+                        </figure>
+                        <div>
                             <Form.Label
-                                className='d-flex justify-content-center'
+                                className={`${btnStyles.Button} btn`}
                                 htmlFor='image-upload'
                             >
-                                <ImageSpinner src={upload_image} message='tap me to upload your goodness' />
-                            </Form.Label>                            
-                        )}
-
+                                Change Upload
+                            </Form.Label>
+                        </div>
                         <Form.File
                             id='image-upload'
                             accept='image/*'
