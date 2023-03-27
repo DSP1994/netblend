@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Media } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Avatar from '../../app_components/Avatar'
@@ -6,6 +6,7 @@ import { OwnerDropdown } from '../../app_components/OwnerDropdown'
 import { useCurrentUser } from '../../contexts/CurrentUserContext'
 import styles from '../../design/Comment.module.css'
 import { axiosRes } from '../../netblend_api/axiosDefaults'
+import CommentEditForm from './CommentEditForm'
 
 const Comment = (props) => {
     const {
