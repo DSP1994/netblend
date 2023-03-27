@@ -9,6 +9,9 @@ import Upload from './Upload'
 import CommentForm from '../comments/CommentForm'
 import { useCurrentUser } from '../../contexts/CurrentUserContext'
 import Comment from '../comments/Comment'
+import InfiniteScroll from 'react-infinite-scroll-component'
+import ImageSpinner from '../../app_components/ImageSpinner'
+import {fetchMoreData} from '../../utils/utils';
 
 function UploadPage() {
     const {id} = useParams();
@@ -51,14 +54,21 @@ function UploadPage() {
                     "Comments"
                     ) : null}   
                     {comments.results.length ? (
-                        comments.results.map(comment => (
+                        <InfiniteScroll
+                            children={comments.results.map(comment => (
                                 <Comment
                                     key={comment.id}
                                     {...comment} 
                                     setPost={setPost}
                                     setComments={setComments}    
                                 />
-                        ))
+                            ))
+                            }
+                            dataLength={comments.results.length}
+                            loader={<ImageSpinner />}
+                            hasMore={!!comments.next}
+                            next={() => fetchMoreData(comments, setComments)}
+                        />
                     ) : currentUser ? (
                         <span>No comments, be the first!</span>
                     ) : (
