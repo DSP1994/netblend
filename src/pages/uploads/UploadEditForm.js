@@ -26,7 +26,7 @@ function UploadEditForm() {
     useEffect(() => {
         const handleMount = async () => {
         try {
-            const { data } = await axiosReq.get(`/posts/${id}`);
+            const { data } = await axiosReq.get(`/posts/${id}/`);
             const { title, content, image, is_owner } = data;
 
             is_owner ? setPostData({ title, content, image }) : history.push("/");
@@ -66,7 +66,7 @@ function UploadEditForm() {
         }
         try {
             await axiosReq.put(`/posts/${id}/`, formData);
-            history.push(`/posts/${id}`);
+            history.push(`/posts/${id}/`);
         } catch (error) {
             console.log(error)
             if (error.response?.status !== 401){
