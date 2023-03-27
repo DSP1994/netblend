@@ -6,10 +6,15 @@ import { axiosReq } from '../../netblend_api/axiosDefaults'
 
 import appStyles from '../../App.module.css'
 import Upload from './Upload'
+import CommentForm from '../comments/CommentForm'
+import { useCurrentUser } from '../../contexts/CurrentUserContext'
 
 function UploadPage() {
     const {id} = useParams();
     const [post, setPost] = useState({ results: []})
+    const useCurrentUser = useCurrentUser();
+    const profile_image = currentUser?.profile_image;
+    const [comments, setComments] = useState({results : [] });
 
     useEffect(() => {
         const handleMount = async () => {
