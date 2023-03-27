@@ -56,9 +56,9 @@ function UploadPage() {
                             </p>
                         ))
                     ) : currentUser ? (
-                        <span>No comments log in</span>
+                        <span>No comments, be the first!</span>
                     ) : (
-                        <span>No comments yet</span>
+                        <span>No comments yet. Log in or sign up!</span>
                     )}          
             </Container>
         </Col>
