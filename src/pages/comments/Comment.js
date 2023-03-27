@@ -7,7 +7,15 @@ import { useCurrentUser } from '../../contexts/CurrentUserContext'
 import styles from '../../design/Comment.module.css'
 
 const Comment = (props) => {
-    const {profile_id, profile_image, owner, updated_at, content} = props;
+    const {
+        profile_id, 
+        profile_image, 
+        owner, updated_at, 
+        content,
+        id,
+        setPost,
+        setComments,
+    } = props;
 
     const currentUser = useCurrentUser()
     const is_owner = currentUser?.username === owner;
