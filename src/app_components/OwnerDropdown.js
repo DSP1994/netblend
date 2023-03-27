@@ -1,12 +1,12 @@
 import React from 'react';
 import { Dropdown } from 'react-bootstrap';
-
 import styles from '../design/OwnerDropdown.module.css'
+
 // The forwardRef is important!!
 // Dropdown needs access to the DOM node in order to position the Menu
 const EditDelete = React.forwardRef(({ onClick }, ref) => (
   <i
-    className='fas fa-ellipsis-v'
+    className='fa-solid fa-ellipsis-vertical'
     ref={ref}
     onClick={(e) => {
       e.preventDefault();
