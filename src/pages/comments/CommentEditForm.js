@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import { axiosRes } from "../../netblend_api/axiosDefaults";
 
-import styles from "../../design/CommentForm.module.css";
+import styles from "../../design/CommentForms.module.css";
 
 function CommentEditForm(props) {
   const { id, content, setShowEditForm, setComments } = props;
