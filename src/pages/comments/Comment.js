@@ -5,6 +5,7 @@ import Avatar from '../../app_components/Avatar'
 import { OwnerDropdown } from '../../app_components/OwnerDropdown'
 import { useCurrentUser } from '../../contexts/CurrentUserContext'
 import styles from '../../design/Comment.module.css'
+import { axiosRes } from '../../netblend_api/axiosDefaults'
 
 const Comment = (props) => {
     const {
@@ -20,6 +21,25 @@ const Comment = (props) => {
     const currentUser = useCurrentUser()
     const is_owner = currentUser?.username === owner;
 
+    const handleDelete = async () => {
+        try {
+            await axiosRes.delete(`/comments/${id}/`)
+            setPost(prevPost => ({
+                results: [{
+                    ...prevPost.results[0],
+                    comments_count: prevPost.results[0].comments_count - 1
+                }]
+            }))
+
+            setComments(prevComments => ({
+                ...prevComments,
+                results: prevComments.results.filter((comment) => comment.id !== id),
+            }))
+        } catch (error) {
+            
+        }
+    }
+
   return (
     <div>
         <Media>
@@ -32,7 +52,7 @@ const Comment = (props) => {
                 <p>{content}</p>
             </Media.Body>
             {is_owner && (
-                <OwnerDropdown handleEdit={() => {}} handleDelete={() => {}}/>
+                <OwnerDropdown handleEdit={() => {}} handleDelete={handleDelete}/>
             )}
         </Media>
     </div>
