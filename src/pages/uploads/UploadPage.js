@@ -8,6 +8,7 @@ import appStyles from '../../App.module.css'
 import Upload from './Upload'
 import CommentForm from '../comments/CommentForm'
 import { useCurrentUser } from '../../contexts/CurrentUserContext'
+import Comment from '../comments/Comment'
 
 function UploadPage() {
     const {id} = useParams();
@@ -51,9 +52,7 @@ function UploadPage() {
                     ) : null}   
                     {comments.results.length ? (
                         comments.results.map(comment => (
-                            <p key={comment.id}>
-                                {comment.owner}:{comment.content}
-                            </p>
+                                <Comment key={comment.id} {...comment} />
                         ))
                     ) : currentUser ? (
                         <span>No comments, be the first!</span>
