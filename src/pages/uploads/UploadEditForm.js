@@ -1,10 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
-import upload_image from '../../images/upload_image.jpg'
 
 import styles from '../../design/UploadForm.module.css'
 import btnStyles from '../../design/Button.module.css'
 import appStyles from '../../App.module.css'
-import ImageSpinner from '../../app_components/ImageSpinner'
 import { Row, Col, Container, Button, Form, Image, Alert } from 'react-bootstrap'
 import { useHistory, useParams } from 'react-router'
 
