@@ -15,6 +15,6 @@
 
 .Button:hover {
     cursor: pointer;
-    background-color: FFFDD0;
+    background-color: #FFFDD0;
     color: #643E36;
 }
