@@ -68,7 +68,6 @@ function UploadEditForm() {
             await axiosReq.put(`/posts/${id}/`, formData);
             history.push(`/posts/${id}`);
         } catch (error) {
-            console.log('error here?')
             console.log(error)
             if (error.response?.status !== 401){
                 setErrors(error.response?.data)
