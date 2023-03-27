@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import upload_image from '../../images/upload_image.jpg'
 
 import styles from '../../design/UploadForm.module.css'
@@ -6,12 +6,12 @@ import btnStyles from '../../design/Button.module.css'
 import appStyles from '../../App.module.css'
 import ImageSpinner from '../../app_components/ImageSpinner'
 import { Row, Col, Container, Button, Form, Image, Alert } from 'react-bootstrap'
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
+import { useHistory, useParams } from 'react-router'
 
 import axiosReq from 'axios'
 
 
-const UploadEditForm = () => {
+function UploadEditForm() {
     const [errors, setErrors] = useState({})
 
     const [postData, setPostData] = useState({
@@ -23,6 +23,22 @@ const UploadEditForm = () => {
 
     const postInput = useRef(null)
     const history = useHistory();
+    const {id} = useParams();
+
+    useEffect(() => {
+        const handleMount = async () => {
+        try {
+            const { data } = await axiosReq.get(`/posts/${id}/`);
+            const { title, content, image, is_owner } = data;
+
+            is_owner ? setPostData({ title, content, image }) : history.push("/");
+        } catch (err) {
+            console.log(err);
+        }
+        };
+
+        handleMount();
+    }, [history, id]);
 
     const handleChange = (event) => {
         setPostData({

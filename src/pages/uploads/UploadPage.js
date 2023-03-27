@@ -7,7 +7,7 @@ import { axiosReq } from '../../netblend_api/axiosDefaults'
 import appStyles from '../../App.module.css'
 import Upload from './Upload'
 
-const UploadPage = () => {
+function UploadPage() {
     const {id} = useParams();
     const [post, setPost] = useState({ results: []})
 

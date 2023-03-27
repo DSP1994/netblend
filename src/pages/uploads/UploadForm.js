@@ -11,7 +11,7 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import axiosReq from 'axios'
 
 
-const UploadForm = () => {
+function UploadForm() {
     const [errors, setErrors] = useState({})
 
     const [postData, setPostData] = useState({
