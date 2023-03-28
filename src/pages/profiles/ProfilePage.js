@@ -32,6 +32,13 @@ function ProfilePage() {
                 <Col className='p-3'>Prof Cont</Col>
             </Row>
         </>
+    );
+
+    const mainProfilePosts =(
+        <>
+        < hr/>
+            <p>posts main by owner</p>
+        </>
     )
   return (
     <div>ProfilePage</div>
