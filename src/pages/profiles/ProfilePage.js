@@ -77,7 +77,7 @@ function ProfilePage() {
                         onClick={() => {}}>Follow</Button>
                     ))}
                 </Col>
-                <Col className='p-3'>Prof Cont</Col>
+                {profile?.content && <Col className='p-3'>{profile.content}</Col>}
             </Row>
         </>
     );
