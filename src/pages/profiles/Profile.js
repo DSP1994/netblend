@@ -28,10 +28,13 @@ const Profile = (props) => {
                 following_id ? (
                     <Button 
                     className={`${btnStyles.Button}`}
-                    
+                    onClick={() => {}}
                     >unfollow</Button>
                 ) : (
-                    <Button>follow</Button>
+                    <Button
+                    className={`${btnStyles.Button}`}
+                    onClick={() => {}}
+                    >follow</Button>
                 )
             )}
         </div>
