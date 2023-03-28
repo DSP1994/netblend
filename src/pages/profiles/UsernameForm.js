@@ -12,6 +12,9 @@ import {
 import btnStyles from "../../design/Button.module.css";
 import appStyles from "../../App.module.css";
 
+// following code has been provided via copy and paste by the CI, form their 
+// moments walk through tutorial
+
 const UsernameForm = () => {
   const [username, setUsername] = useState("");
   const [errors, setErrors] = useState({});
