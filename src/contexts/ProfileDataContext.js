@@ -16,6 +16,14 @@ export const ProfileDataProvider = ({ children }) => {
 
     const currentUser = useCurrentUser();
 
+    const handleFollow = async (clickedProfile) => {
+        try {
+            
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     useEffect(() => {
         const handleMount = async () => {
             try {
