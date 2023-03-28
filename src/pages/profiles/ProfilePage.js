@@ -10,6 +10,9 @@ import { useParams } from 'react-router';
 import { axiosReq } from '../../netblend_api/axiosDefaults';
 import { useProfileData, useSetProfileData } from '../../contexts/ProfileDataContext';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import Upload from '../uploads/Upload';
+import { fetchMoreData } from '../../utils/utils';
+import NoResults from '../../images/no-results.jpg'
 
 
 function ProfilePage() {
@@ -92,9 +95,19 @@ function ProfilePage() {
             <p className='text-center'>{profile?.owner}'s Posts</p>
         <hr />
         {profilePosts.results.length ? (
-            <InfiniteScroll />
+            <InfiniteScroll
+                children={profilePosts.results.map((post) => (
+                    <Upload key={post.id} {...post} setPosts={setProfilePosts}/>
+                ))}
+                dataLength={profilePosts.results.length}
+                loader={<ImageSpinner spinner />}
+                hasMore={!!profilePosts.next}
+                next={() => fetchMoreData(profilePosts, setProfilePosts)}
+                />
         ) : (
-            <ImageSpinner />
+            <ImageSpinner 
+                src={NoResults}
+                message={`No Results found. ${profile?.owner} has yet to have a good coffee to share!`}/>
         )}
         </>
     );
