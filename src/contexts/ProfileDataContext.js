@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { axiosReq } from "../netblend_api/axiosDefaults";
+import { axiosReq, axiosRes } from "../netblend_api/axiosDefaults";
 import { useCurrentUser } from "./CurrentUserContext";
 
 export const ProfileDataContext = createContext();
@@ -18,7 +18,9 @@ export const ProfileDataProvider = ({ children }) => {
 
     const handleFollow = async (clickedProfile) => {
         try {
-            
+            const { data } = await axiosRes.post('/followers/', {
+                followed: clickedProfile.id
+            })
         } catch (error) {
             console.log(error)
         }
@@ -44,7 +46,7 @@ export const ProfileDataProvider = ({ children }) => {
 
     return (
         <ProfileDataContext.Provider value={profileData}>
-            <SetProfileDataContext.Provider value={setProfileData}>
+            <SetProfileDataContext.Provider value={{setProfileData, handleFollow}}>
                 {children}
             </SetProfileDataContext.Provider>
         </ProfileDataContext.Provider>
