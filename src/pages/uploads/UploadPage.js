@@ -39,7 +39,7 @@ function UploadPage() {
     }, [id])
   return (
     <Row className='h-100'>
-        <p>mobile</p>
+        <PopularProfiles mobile />
         <Upload {...post.results[0]} setPost={setPost} postPage/>
         <Col className='py-2 p-0 p-lg-2' lg={8}>
             <Container className={appStyles.Content}>
