@@ -48,8 +48,21 @@ function ProfilePage() {
                     />
                 </Col>
                 <Col lg={6}>
-                    <h3 className='m-2'>Prof User</h3>
-                    <p>stats</p>
+                    <h3 className='m-2'>{profile?.owner}</h3>
+                    <Row className='justify-content-center no-gutters'>
+                        <Col xs={3} className='my-2'>
+                            <div>{profile?.posts_count}</div>
+                            <div>posts</div>
+                        </Col>
+                        <Col xs={3} className='my-2'>
+                            <div>{profile?.follower_count}</div>
+                            <div>followers</div>
+                        </Col>
+                        <Col xs={3} className='my-2'>
+                            <div>{profile?.following_count}</div>
+                            <div>following</div>
+                        </Col>                                                
+                    </Row>
                 </Col>
                 <Col lg={3} className='text-lg-right'>
                     <p>follow b</p>
