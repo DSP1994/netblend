@@ -34,6 +34,9 @@ const PopularProfiles = () => {
   return (
     <Container className={appStyles.Content}>
         <p>Pop Profs</p>
+        {popularProfiles.results.map((profile) => (
+          <p key={profile.id}>{profile.owner}</p>
+          ))}
     </Container>
   )
 }
