@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap'
 import { axiosReq } from '../../netblend_api/axiosDefaults'
 import appStyles from '../../App.module.css'
+import { useCurrentUser } from '../../contexts/CurrentUserContext'
 
 const PopularProfiles = () => {
   const [profileData, setProfileData] = useState({
@@ -10,12 +11,13 @@ const PopularProfiles = () => {
   });
 
   const {popularProfiles} = profileData;
+  const currentUser = useCurrentUser();
 
   useEffect(() => {
     const handleMount = async () => {
       try {
         const{data} = await axiosReq.get(
-          '/profiles/?ordering=-follwers_count'
+          '/profiles/?ordering=-followers_count'
         );
         setProfileData(prevState => ({
           ...prevState,
@@ -27,7 +29,7 @@ const PopularProfiles = () => {
     };
     
     handleMount()
-  })
+  }, [currentUser])
 
   return (
     <Container className={appStyles.Content}>
