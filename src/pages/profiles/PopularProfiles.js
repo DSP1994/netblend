@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap'
 import { axiosReq } from '../../netblend_api/axiosDefaults'
 import appStyles from '../../App.module.css'
 import { useCurrentUser } from '../../contexts/CurrentUserContext'
+import ImageSpinner from '../../app_components/ImageSpinner'
 
 const PopularProfiles = () => {
   const [profileData, setProfileData] = useState({
@@ -33,10 +34,16 @@ const PopularProfiles = () => {
 
   return (
     <Container className={appStyles.Content}>
-        <p>Pop Profs</p>
-        {popularProfiles.results.map((profile) => (
-          <p key={profile.id}>{profile.owner}</p>
-          ))}
+      {popularProfiles.results.length ? (
+        <>
+          <p>Pop Profs</p>
+          {popularProfiles.results.map((profile) => (
+            <p key={profile.id}>{profile.owner}</p>
+            ))}
+        </>
+        ) : (
+          <ImageSpinner spinner />
+        )}
     </Container>
   )
 }
