@@ -13,6 +13,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import Upload from '../uploads/Upload';
 import { fetchMoreData } from '../../utils/utils';
 import NoResults from '../../images/no-results.jpg'
+import { ProfileEdit } from '../../app_components/OwnerDropdown';
 
 
 function ProfilePage() {
@@ -47,6 +48,7 @@ function ProfilePage() {
 
     const mainProfile =(
         <>
+        {profile?.is_owner && <ProfileEdit id={profile?.id} />}
             <Row noGutters className='px-3 text-center'>
                 <Col lg={3} className='text-lg-left'>
                     <Image
