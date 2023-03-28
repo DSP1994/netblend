@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 
-import { Alert, Button, Col, Container, Form, Button, Row } from "react-bootstrap";
+import { Alert, Button, Col, Container, Form, Row } from "react-bootstrap";
 
 import { useHistory, useParams } from "react-router-dom";
 import { axiosRes } from "../../netblend_api/axiosDefaults";
 import {
   useCurrentUser,
   useSetCurrentUser,
-} from "../../app_contexts/CurrentUserContext";
+} from "../../contexts/CurrentUserContext";
 
 import btnStyles from "../../design/Button.module.css";
 import appStyles from "../../App.module.css";
