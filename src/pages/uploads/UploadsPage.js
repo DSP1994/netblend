@@ -11,6 +11,7 @@ import NoResults from '../../images/no-results.jpg'
 import ImageSpinner from '../../app_components/ImageSpinner';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { fetchMoreData } from '../../utils/utils';
+import PopularProfiles from '../profiles/PopularProfiles';
 
 
 function UploadsPage({ message, filter = ''}) {
@@ -83,7 +84,7 @@ function UploadsPage({ message, filter = ''}) {
             )}
         </Col>
         <Col md={4} className='d-none d-lg-block p-0 p-lg-2'>
-            <p>profs for pc</p>
+            <PopularProfiles />
         </Col>        
     </Row>
   )
