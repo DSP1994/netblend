@@ -10,4 +10,4 @@ const PopularProfiles = () => {
   )
 }
 
-export default PopularProfiles
+export default PopularProfiles;

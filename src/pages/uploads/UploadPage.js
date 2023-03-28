@@ -12,6 +12,7 @@ import Comment from '../comments/Comment'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import ImageSpinner from '../../app_components/ImageSpinner'
 import {fetchMoreData} from '../../utils/utils';
+import PopularProfiles from '../profiles/PopularProfiles'
 
 function UploadPage() {
     const {id} = useParams();
@@ -77,7 +78,7 @@ function UploadPage() {
             </Container>
         </Col>
         <Col lg={4} className='d-none d-lg-block p-0 p-lg-2'>
-            PC
+            <PopularProfiles />
         </Col>
     </Row>
   )
