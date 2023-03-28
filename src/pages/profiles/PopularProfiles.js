@@ -4,6 +4,7 @@ import { axiosReq } from '../../netblend_api/axiosDefaults'
 import appStyles from '../../App.module.css'
 import { useCurrentUser } from '../../contexts/CurrentUserContext'
 import ImageSpinner from '../../app_components/ImageSpinner'
+import Profile from './Profile'
 
 const PopularProfiles = ({mobile}) => {
   const [profileData, setProfileData] = useState({
@@ -43,11 +44,11 @@ const PopularProfiles = ({mobile}) => {
           {mobile ? (
             <div className='d-flex justify-content-around'>
               {popularProfiles.results.slice(0, 4).map((profile) => (
-                <p key={profile.id}>{profile.owner}</p>
+                <Profile />
                 ))}              
             </div>
           ) : (popularProfiles.results.map((profile) => (
-                <p key={profile.id}>{profile.owner}</p>
+                <Profile />
             ))
           )}
         </>
