@@ -20,7 +20,18 @@ export const ProfileDataProvider = ({ children }) => {
         try {
             const { data } = await axiosRes.post('/followers/', {
                 followed: clickedProfile.id
-            })
+            });
+
+            setProfileData(prevState => ({
+                ...prevState,
+                popularProfiles: {
+                    ...prevState.popularProfiles,
+                    results: prevState.popularProfiles.results.map(profile => {
+                        return profile.id === clickedProfile.id
+                        
+                    })
+                }
+            }))
         } catch (error) {
             console.log(error)
         }
