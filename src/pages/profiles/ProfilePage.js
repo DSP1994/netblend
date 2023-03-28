@@ -68,9 +68,13 @@ function ProfilePage() {
                 <Col lg={3} className='text-lg-right'>
                     {currentUser && !is_owner && 
                     (profile?.following_id ? (
-                        <Button>Unfollow</Button>
+                        <Button
+                        className={`${btnStyles.Button}`}
+                        onClick={() => {}}>Unfollow</Button>
                     ) : (
-                        <Button>Follow</Button>
+                        <Button
+                        className={`${btnStyles.Button}`}
+                        onClick={() => {}}>Follow</Button>
                     ))}
                 </Col>
                 <Col className='p-3'>Prof Cont</Col>
