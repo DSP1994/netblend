@@ -41,7 +41,24 @@ function ProfilePage() {
         </>
     )
   return (
-    <div>ProfilePage</div>
+    <Row>
+        <Col>
+            <PopularProfiles mobile />
+            <Container>
+                {hasLoaded ? (
+                    <>
+                        {mainProfile}
+                        {mainProfilePosts}
+                    </>
+                ) : (
+                    <ImageSpinner spinner />
+                )}
+            </Container>
+        </Col>
+        <Col>
+            <PopularProfiles />
+        </Col>
+    </Row>
   )
 }
 
