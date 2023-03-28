@@ -26,3 +26,4 @@ export const followHelper = (profile, clickedProfile, following_id) => {
     : 
     profile;
 }
+
