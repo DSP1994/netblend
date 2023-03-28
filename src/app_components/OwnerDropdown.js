@@ -50,17 +50,20 @@ export function ProfileEdit({id}){
       <Dropdown.Toggle as={EditDelete} />
       <Dropdown.Menu>
         <Dropdown.Item
-        onClick={() => {}}
+        onClick={() => history.push(`/profiles/${id}/edit`)}
         aria-label='edit-profile'
-        ><i className='fas fa-edit'></i></Dropdown.Item>
+        ><i className='fas fa-edit' />
+        Edit Profile </Dropdown.Item>
         <Dropdown.Item
-        onClick={() => {}}
+        onClick={() => history.push(`/profiles/${id}/edit/username`)}
         aria-label='edit-username'
-        ><i className='far fa-id-card'></i></Dropdown.Item>
+        ><i className='far fa-id-card' />
+        Edit Username</Dropdown.Item>
         <Dropdown.Item
-        onClick={() => {}}
+        onClick={() => history.push(`/profiles/${id}/edit/password`)}
         aria-label='edit-password'
-        ><i className='fas fa-key'></i></Dropdown.Item>
+        ><i className='fas fa-key' />
+        Edit Password</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
   )
