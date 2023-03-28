@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { Row, Container, Col } from 'react-bootstrap';
+import { Row, Container, Col, Image } from 'react-bootstrap';
 import ImageSpinner from '../../app_components/ImageSpinner';
 import styles from '../../design/ProfilePage.module.css';
 import appStyles from '../../App.module.css'
@@ -8,7 +8,7 @@ import PopularProfiles from './PopularProfiles';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { useParams } from 'react-router';
 import { axiosReq } from '../../netblend_api/axiosDefaults';
-import { useSetProfileData } from '../../contexts/ProfileDataContext';
+import { useProfileData, useSetProfileData } from '../../contexts/ProfileDataContext';
 
 
 function ProfilePage() {
@@ -16,30 +16,36 @@ function ProfilePage() {
     const currentUser = useCurrentUser();
     const {id} = useParams();
     const setProfileData = useSetProfileData();
+    const {pageProfile} = useProfileData();
+    const [profile] = pageProfile.results;
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const [{data: pageProfile}] = await Promise.all([
-                axiosReq.get(`/profiles/${id}/`)
+                axiosReq.get(`/profiles/${id}/`),
                 ])
                 setProfileData(prevState => ({
                     ...prevState,
-                    pageProfile: {results: [pageProfile]}
+                    pageProfile: {results: [pageProfile]},
                 }))
                 setHasLoaded(true);
             } catch (error) {
                 console.log(error)
             }
         }
-        fetchData()
-    }, []);
+        fetchData();
+    }, [id, setProfileData]);
 
     const mainProfile =(
         <>
             <Row noGutters className='px-3 text-center'>
                 <Col lg={3} className='text-lg-left'>
-                    <p>image goes here</p>
+                    <Image
+                        className={styles.ProfileImage}
+                        roundedCircle
+                        src={profile?.image}
+                    />
                 </Col>
                 <Col lg={6}>
                     <h3 className='m-2'>Prof User</h3>
