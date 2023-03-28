@@ -1,6 +1,7 @@
 import React from 'react';
 import { Dropdown } from 'react-bootstrap';
 import styles from '../design/OwnerDropdown.module.css'
+import { useHistory } from 'react-router';
 
 // The forwardRef is important!!
 // Dropdown needs access to the DOM node in order to position the Menu
@@ -40,4 +41,9 @@ export const OwnerDropdown = ({handleEdit, handleDelete}) => {
             </Dropdown.Menu>
         </Dropdown>
     )
+}
+
+export function ProfileEdit({id}){
+  const history = useHistory();
+  return ()
 }
