@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { Row, Container, Col, Image } from 'react-bootstrap';
+import { Row, Container, Col, Image, Button } from 'react-bootstrap';
 import ImageSpinner from '../../app_components/ImageSpinner';
 import styles from '../../design/ProfilePage.module.css';
 import appStyles from '../../App.module.css'
@@ -18,6 +18,7 @@ function ProfilePage() {
     const setProfileData = useSetProfileData();
     const {pageProfile} = useProfileData();
     const [profile] = pageProfile.results;
+    const is_owner = currentUser?.username === profile?.owner;
 
     useEffect(() => {
         const fetchData = async () => {
@@ -55,7 +56,7 @@ function ProfilePage() {
                             <div>posts</div>
                         </Col>
                         <Col xs={3} className='my-2'>
-                            <div>{profile?.follower_count}</div>
+                            <div>{profile?.followers_count}</div>
                             <div>followers</div>
                         </Col>
                         <Col xs={3} className='my-2'>
@@ -65,7 +66,12 @@ function ProfilePage() {
                     </Row>
                 </Col>
                 <Col lg={3} className='text-lg-right'>
-                    <p>follow b</p>
+                    {currentUser && !is_owner && 
+                    (profile?.following_id ? (
+                        <Button>Unfollow</Button>
+                    ) : (
+                        <Button>Follow</Button>
+                    ))}
                 </Col>
                 <Col className='p-3'>Prof Cont</Col>
             </Row>
