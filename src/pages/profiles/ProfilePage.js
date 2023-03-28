@@ -42,9 +42,9 @@ function ProfilePage() {
     )
   return (
     <Row>
-        <Col>
+        <Col className='py-2 p-0 p-lg-2' lg={8}>
             <PopularProfiles mobile />
-            <Container>
+            <Container className={appStyles.Content}>
                 {hasLoaded ? (
                     <>
                         {mainProfile}
@@ -55,7 +55,7 @@ function ProfilePage() {
                 )}
             </Container>
         </Col>
-        <Col>
+        <Col className='d-none d-lg-block p-0 p-lg-2' lg={4}>
             <PopularProfiles />
         </Col>
     </Row>
