@@ -28,7 +28,15 @@ export const ProfileDataProvider = ({ children }) => {
                     ...prevState.popularProfiles,
                     results: prevState.popularProfiles.results.map(profile => {
                         return profile.id === clickedProfile.id
-                        
+                        ? {
+                            ...profile,
+                            followers_count: profile.followers_count + 1,
+                            following_id: data.id
+                        } : profile.is_owner
+                        ? {
+                            ...profile, following_counter: profile.following_count + 1 } 
+                        : 
+                        profile;
                     })
                 }
             }))
