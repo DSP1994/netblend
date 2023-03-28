@@ -46,12 +46,21 @@ export const OwnerDropdown = ({handleEdit, handleDelete}) => {
 export function ProfileEdit({id}){
   const history = useHistory();
   return (
-    <Dropdown>
-      <Dropdown.Toggle />
+    <Dropdown className={`ml-auto px-3 ${styles.Absolute}`} drop='left'>
+      <Dropdown.Toggle as={EditDelete} />
       <Dropdown.Menu>
-        <Dropdown.Item><i></i></Dropdown.Item>
-        <Dropdown.Item><i></i></Dropdown.Item>
-        <Dropdown.Item><i></i></Dropdown.Item>
+        <Dropdown.Item
+        onClick={() => {}}
+        aria-label='edit-profile'
+        ><i className='fas fa-edit'></i></Dropdown.Item>
+        <Dropdown.Item
+        onClick={() => {}}
+        aria-label='edit-username'
+        ><i className='far fa-id-card'></i></Dropdown.Item>
+        <Dropdown.Item
+        onClick={() => {}}
+        aria-label='edit-password'
+        ><i className='fas fa-key'></i></Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
   )
