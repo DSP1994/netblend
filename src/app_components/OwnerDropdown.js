@@ -45,5 +45,14 @@ export const OwnerDropdown = ({handleEdit, handleDelete}) => {
 
 export function ProfileEdit({id}){
   const history = useHistory();
-  return ()
+  return (
+    <Dropdown>
+      <Dropdown.Toggle />
+      <Dropdown.Menu>
+        <Dropdown.Item><i></i></Dropdown.Item>
+        <Dropdown.Item><i></i></Dropdown.Item>
+        <Dropdown.Item><i></i></Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  )
 }
