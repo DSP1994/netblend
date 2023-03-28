@@ -9,6 +9,7 @@ import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { useParams } from 'react-router';
 import { axiosReq } from '../../netblend_api/axiosDefaults';
 import { useProfileData, useSetProfileData } from '../../contexts/ProfileDataContext';
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 
 function ProfilePage() {
@@ -24,13 +25,15 @@ function ProfilePage() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const [{data: pageProfile}] = await Promise.all([
+                const [{data: pageProfile}, {data: profilePosts}] = await Promise.all([
                 axiosReq.get(`/profiles/${id}/`),
+                axiosReq(`/posts/?owner_profile=${id}`),
                 ])
                 setProfileData(prevState => ({
                     ...prevState,
                     pageProfile: {results: [pageProfile]},
                 }))
+                setProfilePosts(profilePosts);
                 setHasLoaded(true);
             } catch (error) {
                 console.log(error)
@@ -86,9 +89,15 @@ function ProfilePage() {
     const mainProfilePosts =(
         <>
         < hr/>
-            <p className='text-center'>posts main by owner</p>
+            <p className='text-center'>{profile?.owner}'s Posts</p>
+        <hr />
+        {profilePosts.results.length ? (
+            <InfiniteScroll />
+        ) : (
+            <ImageSpinner />
+        )}
         </>
-    )
+    );
   return (
     <Row>
         <Col className='py-2 p-0 p-lg-2' lg={8}>
