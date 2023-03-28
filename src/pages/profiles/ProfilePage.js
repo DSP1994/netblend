@@ -6,11 +6,13 @@ import appStyles from '../../App.module.css'
 import btnStyles from '../../design/Button.module.css'
 import PopularProfiles from './PopularProfiles';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
+import { useParams } from 'react-router';
 
 
 function ProfilePage() {
     const [hasLoaded, setHasLoaded] = useState(false);
     const currentUser = useCurrentUser();
+    const {id} = useParams();
 
     useEffect(() => {
         setHasLoaded(true);
