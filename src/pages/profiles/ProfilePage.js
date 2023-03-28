@@ -13,6 +13,7 @@ import { useProfileData, useSetProfileData } from '../../contexts/ProfileDataCon
 
 function ProfilePage() {
     const [hasLoaded, setHasLoaded] = useState(false);
+    const [profilePosts, setProfilePosts] = useState({ results: [] });
     const currentUser = useCurrentUser();
     const {id} = useParams();
     const setProfileData = useSetProfileData();
