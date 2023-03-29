@@ -30,7 +30,8 @@ const NavBar = () => {
                         >
                             <i className="fas fa-plus-square"></i>
                             Add Photo
-                    </NavLink>        
+                    </NavLink>
+                        
     )
     const loggedInIcons = 
                 <>
@@ -49,7 +50,17 @@ const NavBar = () => {
                         >
                             <i className="fas fa-heart"></i>
                             Liked Photos
-                    </NavLink>    
+                    </NavLink>
+                    <NavLink
+                        to="/article/create"
+                        className={styles.NavLink}
+                        activeClassName={styles.Active}
+                        aria-label="post an article"
+                    >
+                        <i className="fa-solid fa-file-pen" />
+                        {' '}
+                        Add Article
+                    </NavLink>                     
                     <NavLink
                         to='/'
                         className={styles.NavLink}

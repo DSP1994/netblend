@@ -14,7 +14,7 @@ function CreateArticleForm() {
                 <Form.Control 
                 type='text'
                 name='title'
-                value={title}
+                // value={title}
                 onChange={() => {}}
                 aria-label='title'
                 />
@@ -26,7 +26,7 @@ function CreateArticleForm() {
                 as='textarea'
                 rows={8}
                 name='content'
-                value={content}
+                // value={content}
                 onChange={() => {}}
                 aria-label='content'
                 />
