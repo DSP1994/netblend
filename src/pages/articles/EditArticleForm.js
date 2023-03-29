@@ -8,6 +8,7 @@ import styles from '../../design/ArticleForm.module.css'
 
 import { axiosReq } from '../../netblend_api/axiosDefaults'
 import {useRedirect} from '../../hooks/useRedirect';
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
 function EditArticleForm() {
     useRedirect('loggedOut');
@@ -19,13 +20,16 @@ function EditArticleForm() {
     })
 
     const {title, content} = articleData;
+    const {id} = useParams();
 
     useEffect(() => {
         const handleMount = async () => {
             try {
                 const {data} = await axiosReq.get(`/articles/${id}/`);
-                const {title, content} = data;
-                is_owner ? setArticleData({
+                const {title, content, is_owner} = data;
+
+                is_owner 
+                ? setArticleData({
                     title, content
                 })
                 : history.push('/')
@@ -101,7 +105,7 @@ function EditArticleForm() {
             ))}
             <Row className={styles.RowSpace}>
                 <Button type='submit' className={btnStyles.Button}>
-                    Post
+                    Edit
                 </Button>
                 <Button onClick={() => history.goBack()} className={btnStyles.Button}>
                     Cancel

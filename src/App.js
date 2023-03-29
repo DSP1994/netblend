@@ -17,6 +17,7 @@ import ProfileEditForm from './pages/profiles/ProfileEditForm';
 import CreateArticleForm from './pages/articles/CreateArticleForm';
 import ArticlePage from './pages/articles/ArticlePage';
 import ArticlesPage from './pages/articles/ArticlesPage'
+import EditArticleForm from './pages/articles/EditArticleForm';
 
 function App() {
   const currentUser = useCurrentUser();
@@ -55,7 +56,6 @@ function App() {
                 )}
               />              
               <Route exact path='/' render={() => <UploadsPage message="No Results Found." />} />
-              <Route exact path='/articles' render={() => <ArticlesPage message="No Results Found" />}/>
               <Route exact path='/signin' render={() => <SignInForm />} />
               <Route exact path='/signup' render={() => <SignUpForm />} />
               <Route exact path='/posts/upload' render={() => <UploadForm />} />
@@ -70,6 +70,8 @@ function App() {
               />
               <Route exact path='/article/create' render={() => <CreateArticleForm />} />
               <Route exact path='/article/:id' render={() => <ArticlePage />}/> 
+              <Route exact path='/article' render={() => <ArticlesPage message="No Results Found" />}/>
+              <Route exact path='/article/:id/edit' render={() => <EditArticleForm /> }/>
               <Route render={
                   ()=>
                   <p>

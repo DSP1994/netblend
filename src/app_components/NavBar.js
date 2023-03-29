@@ -44,7 +44,7 @@ const NavBar = () => {
                             Followed Profiles
                     </NavLink>
                     <NavLink
-                        to='/articles'
+                        to='/article'
                         className={styles.NavLink}
                         activeClassName={styles.Active}
                         >

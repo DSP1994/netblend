@@ -10,10 +10,9 @@ import {axiosRes} from '../../netblend_api/axiosDefaults';
 import ArticlePage from './ArticlePage';
 
 function Article(props) {
-    const [
-        id, owner, title, content, created_on,
+    const {id, owner, title, content, created_on,
         modified_on, profile_id, profile_image,
-    ] = props;
+     } = props;
 
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
@@ -47,10 +46,9 @@ function Article(props) {
 
       <Col>
         <Link to={`article/${id}`}>
-          <img alt={title}/>
+          <h2>{title}</h2>          
         </Link>
         <hr />
-        <h2>{title}</h2>
         <p>{content}</p>
         <p>{created_on}</p>
         <p>{modified_on}</p>
