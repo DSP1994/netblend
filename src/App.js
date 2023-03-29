@@ -15,7 +15,7 @@ import UsernameForm from './pages/profiles/UsernameForm';
 import UserPasswordForm from './pages/profiles/UserPasswordForm';
 import ProfileEditForm from './pages/profiles/ProfileEditForm';
 import CreateArticleForm from './pages/articles/CreateArticleForm';
-// import Article from './pages/articles/Article';
+// import Article from './pages/articles/ArticlePage';
 
 function App() {
   const currentUser = useCurrentUser();
