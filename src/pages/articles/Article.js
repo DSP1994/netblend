@@ -3,6 +3,7 @@ import { Col, Container, Media } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import Avatar from '../../app_components/Avatar';
 import styles from '../../design/Article.module.css'
+import appStyles from '../../App.module.css'
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 // import appStyles from '../../App.module.css'
 import { OwnerDropdown } from '../../app_components/OwnerDropdown';
@@ -32,7 +33,7 @@ function Article(props) {
     }
 
   return (
-    <Container className={styles.Container}>
+    <Container className={appStyles.Container}>
       <hr />
       <Media>
         <Link to={`/profiles/${profile_id}`}>
