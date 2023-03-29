@@ -82,7 +82,7 @@ function SignInForm () {
                         type="submit"
                         className={`${btnStyles.Button} ${btnStyles.Fill}`}
                     >
-                        Sign Up Now!
+                        Sign In Now!
                     </Button>
                     {errors.non_field_errors?.map((message, idx) => (
                     <Alert variant='warning' key={idx} className="mt-3">
