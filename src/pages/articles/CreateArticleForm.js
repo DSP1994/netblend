@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
 import { Button, Container, Form, Row } from 'react-bootstrap'
+import { useHistory } from 'react-router-dom';
 
 import appStyles from '../../App.module.css';
 import btnStyles from '../../design/Button.module.css'
 import styles from '../../design/CreateArticleForm.module.css'
 
+import { axiosReq } from '../../netblend_api/axiosDefaults'
+
 function CreateArticleForm() {
     const [errors, setErrors] = useState();
+    history = useHistory();
     const [articleData, setArticleData] = useState({
         title: '',
         content: '',
@@ -28,14 +32,23 @@ function CreateArticleForm() {
         const formData = new FormData();
 
         formData.append('title', title);
-        formData.append('content', content);        
+        formData.append('content', content);      
+        
+        try {
+            const {data} = await axiosReq.post('/articles/', formData);
+            history.pushState(`/articles/${data.id}`);
+        } catch (error) {
+            if (error.response?.status !== 401){
+                setErrors(error.response?.data);
+            }
+        }
     };
 
   return (
     <Container className={styles.FormAlign}>
         <hr />
         <h1><strong>Create an Article</strong></h1>
-        <Form onSubmit={() => {}}>
+        <Form onSubmit={() => handleSubmit}>
             <Form.Group>
                 <Form.Label>Caption</Form.Label>
                 <Form.Control 
