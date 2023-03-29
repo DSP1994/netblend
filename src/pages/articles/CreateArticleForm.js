@@ -15,7 +15,14 @@ function CreateArticleForm() {
     const {
         title, content,
     } = articleData;
-    
+
+    const handleChange = (event) => {
+        setArticleData({
+        ...articleData,
+        [event.target.name]: event.target.value,
+        });
+    };
+
   return (
     <Container className={styles.FormAlign}>
         <Form onSubmit={() => {}}>
@@ -25,7 +32,7 @@ function CreateArticleForm() {
                 type='text'
                 name='title'
                 value={title}
-                onChange={() => {}}
+                onChange={() => handleChange}
                 aria-label='title'
                 />
             </Form.Group>
@@ -37,7 +44,7 @@ function CreateArticleForm() {
                 rows={8}
                 name='content'
                 value={content}
-                onChange={() => {}}
+                onChange={() => handleChange}
                 aria-label='content'
                 />
             </Form.Group>
