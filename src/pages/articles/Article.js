@@ -1,5 +1,7 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { Col, Container, Media } from 'react-bootstrap';
+import { Link, useHistory } from 'react-router-dom';
+import Avatar from '../../app_components/Avatar';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 
 function Article(props) {
@@ -13,7 +15,27 @@ function Article(props) {
     const history = useHistory();
 
   return (
-    <div>Article</div>
+    <Container>
+      <hr />
+      <Media>
+        <Link>
+          <Avatar />
+          <h2></h2>
+          <p></p>
+        </Link>
+      </Media>
+
+      <Col>
+        <Link>
+          <img />
+        </Link>
+        <hr />
+        <h2>Title</h2>
+        <p>content</p>
+        <p>updated on</p>
+      </Col>
+      <hr />
+    </Container>
   )
 }
 
