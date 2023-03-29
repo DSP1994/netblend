@@ -2,7 +2,10 @@ import React from 'react';
 import { Col, Container, Media } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import Avatar from '../../app_components/Avatar';
+import styles from '../../design/'
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
+import { OwnerDropdown } from '../../app_components/OwnerDropdown';
+import {axiosRes} from '../../netblend_api/axiosDefaults';
 
 function Article(props) {
     const [
