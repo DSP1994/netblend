@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Container, Form, Row, Alert } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom';
 
@@ -19,6 +19,23 @@ function EditArticleForm() {
     })
 
     const {title, content} = articleData;
+
+    useEffect(() => {
+        const handleMount = async () => {
+            try {
+                const {data} = await axiosReq.get(`/articles/${id}/`);
+                const {title, content} = data;
+                is_owner ? setArticleData({
+                    title, content
+                })
+                : history.push('/')
+            } catch (error) {
+                console.log(error)
+            }
+        };
+
+        handleMount();
+    }, [history, id])
 
     const handleChange = (event) => {
         setArticleData({
