@@ -84,7 +84,7 @@ function CreateArticleForm() {
                 <Button type='submit' className={btnStyles.Button}>
                     Post
                 </Button>
-                <Button onClick={() => {}} className={btnStyles.Button}>
+                <Button onClick={() => history.goBack()} className={btnStyles.Button}>
                     Cancel
                 </Button>            
             </Row>
