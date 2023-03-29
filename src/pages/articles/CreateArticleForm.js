@@ -7,24 +7,37 @@ import styles from '../../design/CreateArticleForm.module.css'
 
 function CreateArticleForm() {
   return (
-    <Container>
-        <Form>
+    <Container className={styles.FormAlign}>
+        <Form onSubmit={() => {}}>
             <Form.Group>
-                <Form.Label>
-                <Form.Control />
-                </Form.Label>
+                <Form.Label>Caption</Form.Label>
+                <Form.Control 
+                type='text'
+                name='title'
+                value={title}
+                onChange={() => {}}
+                aria-label='title'
+                />
             </Form.Group>
+            {/* Alert will go here */}
             <Form.Group>
-                <Form.Label>
-                <Form.Control />
-                </Form.Label>
+                <Form.Label>Description</Form.Label>
+                <Form.Control 
+                as='textarea'
+                rows={8}
+                name='content'
+                value={content}
+                onChange={() => {}}
+                aria-label='content'
+                />
             </Form.Group>
-            <Row>
-                <Button>
-
+            {/* Alert will go here */}
+            <Row className={styles.RowSpace}>
+                <Button type='submit' className={btnStyles.Button}>
+                    Post
                 </Button>
-                <Button>
-                    
+                <Button onClick={() => {}} className={btnStyles.Button}>
+                    Cancel
                 </Button>            
             </Row>
         </Form>
