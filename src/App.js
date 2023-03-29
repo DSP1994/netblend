@@ -15,7 +15,7 @@ import UsernameForm from './pages/profiles/UsernameForm';
 import UserPasswordForm from './pages/profiles/UserPasswordForm';
 import ProfileEditForm from './pages/profiles/ProfileEditForm';
 import CreateArticleForm from './pages/articles/CreateArticleForm';
-// import Article from './pages/articles/ArticlePage';
+import ArticlesPage from './pages/articles/ArticlesPage';
 
 function App() {
   const currentUser = useCurrentUser();
@@ -68,7 +68,7 @@ function App() {
               <Route exact path='/profiles/:id/edit' render={() => <ProfileEditForm />}
               />
               <Route exact path='/article/create' render={() => <CreateArticleForm />} />
-              {/* <Route exact path='/article/:id' render={() => <ArticlePage />}/>  */}
+              <Route exact path='/article/:id' render={() => <ArticlesPage />}/> 
               <Route render={
                   ()=>
                   <p>

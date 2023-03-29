@@ -39,9 +39,9 @@ function Article(props) {
           <Avatar src={profile_image} height={55}/>
           {owner}
         </Link>
-        {is_owner && articlePage && (
+        {/* {is_owner && articlePage && (
           <OwnerDropdown handleEdit={handleEdit} handleDelete={handleDelete} />
-           )}        
+           )}         */}
       </Media>
 
       <Col>
