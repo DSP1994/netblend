@@ -1,6 +1,10 @@
 import React from 'react'
 import { Button, Container, Form, Row } from 'react-bootstrap'
 
+import appStyles from '../../App.module.css';
+import btnStyles from '../../design/Button.module.css'
+import styles from '../../design/CreateArticleForm.module.css'
+
 function CreateArticleForm() {
   return (
     <Container>
