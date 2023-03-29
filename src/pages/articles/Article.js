@@ -18,6 +18,19 @@ function Article(props) {
     const is_owner = currentUser?.username === owner;
     const history = useHistory();
 
+    const handleEdit = () => {
+      history.push(`/article/${id}/edit`);
+    };
+
+    const handleDelete = async () => {
+      try {
+        await axiosRes.delete(`/article/${id}/`);
+        history.goBack();
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
   return (
     <Container className={styles.Container}>
       <hr />
@@ -26,9 +39,9 @@ function Article(props) {
           <Avatar src={profile_image} height={55}/>
           {owner}
         </Link>
-        {/* {is_owner && articlePage && (
+        {is_owner && articlePage && (
           <OwnerDropdown handleEdit={handleEdit} handleDelete={handleDelete} />
-           )}         */}
+           )}        
       </Media>
 
       <Col>
