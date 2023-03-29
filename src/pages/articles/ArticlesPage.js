@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Container, Form } from 'react-bootstrap'
 import { useLocation } from 'react-router-dom';
 
-function ArticlePage() {
+function ArticlePage({message, filter = ''}) {
     const [article, setArticle] = useState({results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);
     const {pathname} = useLocation();
