@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 import appStyles from '../../App.module.css';
 import btnStyles from '../../design/Button.module.css'
-import styles from '../../design/CreateArticleForm.module.css'
+import styles from '../../design/ArticleForm.module.css'
 
 import { axiosReq } from '../../netblend_api/axiosDefaults'
 import {useRedirect} from '../../hooks/useRedirect';
