@@ -27,7 +27,17 @@ function ArticlePage({message, filter = ''}) {
                 console.log(error)
             }
         };
-    })
+
+        setHasLoaded(true)
+
+        const timer = setTimeout(() => {
+            fetchArticles();
+        }, 1000);
+
+        return () => {
+            clearTimeOut(timer)
+        };
+    }, [filter, query, pathname])
 
   return (
     <Container>
