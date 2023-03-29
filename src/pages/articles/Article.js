@@ -5,8 +5,9 @@ import Avatar from '../../app_components/Avatar';
 import styles from '../../design/Article.module.css'
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 // import appStyles from '../../App.module.css'
-// import { OwnerDropdown } from '../../app_components/OwnerDropdown';
+import { OwnerDropdown } from '../../app_components/OwnerDropdown';
 import {axiosRes} from '../../netblend_api/axiosDefaults';
+import ArticlePage from './ArticlePage';
 
 function Article(props) {
     const [
@@ -39,9 +40,9 @@ function Article(props) {
           <Avatar src={profile_image} height={55}/>
           {owner}
         </Link>
-        {/* {is_owner && articlePage && (
+        {is_owner && ArticlePage && (
           <OwnerDropdown handleEdit={handleEdit} handleDelete={handleDelete} />
-           )}         */}
+           )}        
       </Media>
 
       <Col>

@@ -28,7 +28,7 @@ function CreateArticleForm() {
     };
 
     const handleSubmit = async (event) => {
-        event.preventDeaful();
+        event.preventDefault();
         const formData = new FormData();
 
         formData.append('title', title);

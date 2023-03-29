@@ -44,6 +44,14 @@ const NavBar = () => {
                             Followed Profiles
                     </NavLink>
                     <NavLink
+                        to='/articles'
+                        className={styles.NavLink}
+                        activeClassName={styles.Active}
+                        >
+                            <i className="fas fa-book"></i>
+                            Articles
+                    </NavLink>                    
+                    <NavLink
                         to='/liked'
                         className={styles.NavLink}
                         activeClassName={styles.Active}
