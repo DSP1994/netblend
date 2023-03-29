@@ -2,14 +2,15 @@ import React from 'react';
 import { Col, Container, Media } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import Avatar from '../../app_components/Avatar';
-import styles from '../../design/'
+import styles from '../../design/Article.module.css'
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
+import appStyles from '../../App.module.css'
 import { OwnerDropdown } from '../../app_components/OwnerDropdown';
 import {axiosRes} from '../../netblend_api/axiosDefaults';
 
 function Article(props) {
     const [
-        id, owner, is_owner, title, content, created_on,
+        id, owner, title, content, created_on,
         modified_on, profile_id, profile_image,
     ] = props;
 
@@ -18,24 +19,26 @@ function Article(props) {
     const history = useHistory();
 
   return (
-    <Container>
+    <Container className={styles.Container}>
       <hr />
       <Media>
-        <Link>
-          <Avatar />
+        <Link to={`/profiles/${profile_id}`}>
+          <Avatar src={profile_image} height={55}/>
+          {owner}
           <h2></h2>
           <p></p>
         </Link>
       </Media>
 
       <Col>
-        <Link>
-          <img />
+        <Link to={`article/${id}`}>
+          <img alt={title}/>
         </Link>
         <hr />
-        <h2>Title</h2>
-        <p>content</p>
-        <p>updated on</p>
+        <h2>{title}</h2>
+        <p>{content}</p>
+        <p>{created_on}</p>
+        <p>{modified_on}</p>
       </Col>
       <hr />
     </Container>
