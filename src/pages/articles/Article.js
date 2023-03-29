@@ -25,9 +25,10 @@ function Article(props) {
         <Link to={`/profiles/${profile_id}`}>
           <Avatar src={profile_image} height={55}/>
           {owner}
-          <h2></h2>
-          <p></p>
         </Link>
+        {/* {is_owner && articlePage && (
+          <OwnerDropdown handleEdit={handleEdit} handleDelete={handleDelete} />
+           )}         */}
       </Media>
 
       <Col>
