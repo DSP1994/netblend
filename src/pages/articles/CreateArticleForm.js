@@ -35,8 +35,8 @@ function CreateArticleForm() {
         formData.append('content', content);      
         
         try {
-            const {data} = await axiosReq.post('/articles/', formData);
-            history.push(`/articles/${data.id}`);
+            const {data} = await axiosReq.post('/article/', formData);
+            history.push(`/article/${data.id}`);
             console.log(formData)
         } catch (error) {
             console.log(error)
