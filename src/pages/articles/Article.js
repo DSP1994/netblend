@@ -4,8 +4,8 @@ import { Link, useHistory } from 'react-router-dom';
 import Avatar from '../../app_components/Avatar';
 import styles from '../../design/Article.module.css'
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
-import appStyles from '../../App.module.css'
-import { OwnerDropdown } from '../../app_components/OwnerDropdown';
+// import appStyles from '../../App.module.css'
+// import { OwnerDropdown } from '../../app_components/OwnerDropdown';
 import {axiosRes} from '../../netblend_api/axiosDefaults';
 
 function Article(props) {
