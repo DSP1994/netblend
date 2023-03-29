@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Container, Form, Row } from 'react-bootstrap'
+import { Button, Container, Form, Row, Alert } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom';
 
 import appStyles from '../../App.module.css';
@@ -10,7 +10,7 @@ import { axiosReq } from '../../netblend_api/axiosDefaults'
 
 function CreateArticleForm() {
     const [errors, setErrors] = useState();
-    history = useHistory();
+    const history = useHistory();
     const [articleData, setArticleData] = useState({
         title: '',
         content: '',
@@ -36,7 +36,7 @@ function CreateArticleForm() {
         
         try {
             const {data} = await axiosReq.post('/articles/', formData);
-            history.pushState(`/articles/${data.id}`);
+            history.push(`/articles/${data.id}`);
         } catch (error) {
             if (error.response?.status !== 401){
                 setErrors(error.response?.data);
@@ -59,7 +59,11 @@ function CreateArticleForm() {
                 aria-label='title'
                 />
             </Form.Group>
-            {/* Alert will go here */}
+            {errors?.title?.map((message, idx) => (
+            <Alert variant="danger" key={idx}>
+                {message}
+            </Alert>
+            ))}
             <Form.Group>
                 <Form.Label>Description</Form.Label>
                 <Form.Control 
@@ -71,7 +75,11 @@ function CreateArticleForm() {
                 aria-label='content'
                 />
             </Form.Group>
-            {/* Alert will go here */}
+            {errors?.content?.map((message, idx) => (
+            <Alert variant="danger" key={idx}>
+                {message}
+            </Alert>
+            ))}
             <Row className={styles.RowSpace}>
                 <Button type='submit' className={btnStyles.Button}>
                     Post
