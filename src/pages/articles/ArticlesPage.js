@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container, Form } from 'react-bootstrap'
 import { useLocation } from 'react-router-dom';
 
@@ -14,6 +14,20 @@ function ArticlePage({message, filter = ''}) {
     const {pathname} = useLocation();
 
     const [query, setQuery] = useState('');
+
+    useEffect(() => {
+        const fetchArticles = async () => {
+            try {
+                const {data} = await axiosReq.get(
+                    `/article/?${filter}search=${query}`
+                );
+                setArticle(data);
+                setHasLoaded(true);
+            } catch (error) {
+                console.log(error)
+            }
+        };
+    })
 
   return (
     <Container>
