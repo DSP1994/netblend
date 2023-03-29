@@ -23,8 +23,18 @@ function CreateArticleForm() {
         });
     };
 
+    const handleSubmit = async (event) => {
+        event.preventDeaful();
+        const formData = new FormData();
+
+        formData.append('title', title);
+        formData.append('content', content);        
+    };
+
   return (
     <Container className={styles.FormAlign}>
+        <hr />
+        <h1><strong>Create an Article</strong></h1>
         <Form onSubmit={() => {}}>
             <Form.Group>
                 <Form.Label>Caption</Form.Label>
