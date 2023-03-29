@@ -12,7 +12,7 @@ function ArticlePage() {
         const handleMount = async () => {
             try {
                 const [{data: article}] = await Promise.all([
-                    axiosReq.get(`/article${id}`),
+                    axiosReq.get(`/article/${id}`),
                 ]);
                 setArticle({results: [article]})
             } catch (error) {

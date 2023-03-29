@@ -50,7 +50,7 @@ function CreateArticleForm() {
     <Container className={styles.FormAlign}>
         <hr />
         <h1><strong>Create an Article</strong></h1>
-        <Form onSubmit={() => handleSubmit}>
+        <Form onSubmit={handleSubmit}>
             <Form.Group>
                 <Form.Label>Caption</Form.Label>
                 <Form.Control 
