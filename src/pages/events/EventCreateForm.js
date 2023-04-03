@@ -27,6 +27,22 @@ function EventCreateForm() {
         });
     };
 
+    const handeSubmit = async(event) => {
+        event.preventDefault();
+        const formData = new FormData();
+
+        formData.append('title', title);
+        formData.append('content', content);
+        formData.append('date', date);
+        formData.append('time', time);
+        formData.append('city', city);
+        formData.append('country', country);
+        formData.append('price', price);
+        formData.append('event_link', event_link);
+
+        
+    }
+
   return (
     <Container>
         <Form>
