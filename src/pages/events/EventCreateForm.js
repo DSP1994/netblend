@@ -56,35 +56,83 @@ function EventCreateForm() {
         <Form onSubmit={handleSubmit}>
             <Form.Group>
                 <Form.Label>Title</Form.Label>
-                <Form.Control />
+                <Form.Control 
+                    type=''
+                    name=''
+                    value={}
+                    onChange={}
+                    aria-label=''
+                />
             </Form.Group>
             <Form.Group>
                 <Form.Label>Content</Form.Label>
-                <Form.Control />
+                <Form.Control 
+                    type=''
+                    name=''
+                    value={}
+                    onChange={}
+                    aria-label=''
+                />
             </Form.Group>
             <Form.Group>
                 <Form.Label>City</Form.Label>
-                <Form.Control />
+                <Form.Control 
+                    type=''
+                    name=''
+                    value={}
+                    onChange={}
+                    aria-label=''
+                />
             </Form.Group>
             <Form.Group>
                 <Form.Label>Country</Form.Label>
-                <Form.Control />
+                <Form.Control 
+                    type=''
+                    name=''
+                    value={}
+                    onChange={}
+                    aria-label=''
+                />
             </Form.Group>
             <Form.Group>
                 <Form.Label>Date</Form.Label>
-                <Form.Control />
+                <Form.Control 
+                    type=''
+                    name=''
+                    value={}
+                    onChange={}
+                    aria-label=''
+                />
             </Form.Group>
             <Form.Group>
                 <Form.Label>Time</Form.Label>
-                <Form.Control />
+                <Form.Control 
+                    type=''
+                    name=''
+                    value={}
+                    onChange={}
+                    aria-label=''
+                />
             </Form.Group>
             <Form.Group>
                 <Form.Label>Cost</Form.Label>
-                <Form.Control />
+                <Form.Control 
+                    type=''
+                    name=''
+                    value={}
+                    onChange={}
+                    aria-label=''
+                />
             </Form.Group>
             <Form.Group>
                 <Form.Label>Event Url</Form.Label>
-                <Form.Control />
+                <Form.Control 
+                    type=''
+                    name=''
+                    value={}
+                    onChange={}
+                    aria-label=''
+                />
             </Form.Group>
             <hr />
             <Row>
