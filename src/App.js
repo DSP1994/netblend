@@ -20,7 +20,7 @@ import ArticlesPage from './pages/articles/ArticlesPage'
 import EditArticleForm from './pages/articles/EditArticleForm';
 import EventCreateForm from './pages/events/EventCreateForm';
 import EventPage from './pages/events/EventPage';
-import EventEditForm from './pages/events/EventEditPage';
+import EventEditForm from './pages/events/EventEditForm';
 import EventsPage from './pages/events/EventsPage';
 
 function App() {

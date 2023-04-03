@@ -29,7 +29,7 @@ function EventEditForm() {
         const handleMount = async () => {
             try {
                 const {data} = await axiosReq.get(`/events/${id}/`);
-                const {title, content, date, time, city, country, price, event_link} = data;
+                const {title, content, date, time, city, country, price, event_link, is_owner} = data;
 
                 is_owner ? setEventData({
                     title, content, date, time, city, country, price, event_link
