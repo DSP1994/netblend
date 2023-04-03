@@ -19,6 +19,14 @@ function EventCreateForm() {
     const {title, content, date, time, city, country, price, event_link,} = eventData;
 
     const history = useHistory();
+
+    const handleChange = (event) => {
+        setEventData({
+            ...eventData,
+            [event.target.name]: event.target.value,
+        });
+    };
+
   return (
     <Container>
         <Form>
