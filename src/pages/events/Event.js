@@ -15,6 +15,10 @@ const currentUser = useCurrentUser();
 const is_owner = currentUser?.username === owner;
 const history = useHistory();
 
+const handleEdit = () => {
+    history.push(`/events/${id}/edit`);
+};
+
   return (
     <Container>
         <Link>
