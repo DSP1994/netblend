@@ -180,10 +180,10 @@ function EventCreateForm() {
             ))}              
             <hr />
             <Row>
-                <Button>
+                <Button type='submit' className={btnStyles.Button}>
                     Confirm
                 </Button>
-                <Button>
+                <Button onClick={() => history.goBack()} className={btnStyles.Button}>
                     Cancel
                 </Button>
             </Row>
