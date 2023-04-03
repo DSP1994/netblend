@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Container, Form, Row } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom';
+import { axiosReq } from '../../netblend_api/axiosDefaults';
 
 function EventCreateForm() {
     const [errors, setErrors] = useState();
@@ -40,8 +41,15 @@ function EventCreateForm() {
         formData.append('price', price);
         formData.append('event_link', event_link);
 
-        
-    }
+        try {
+            const {data} = await axiosReq.post('/events/', formData);
+            history.push(`/events/${data.id}`);
+        } catch (error) {
+            if (error.response?.status !== 401){
+                setErrors(error.response?.data);
+            }
+        }
+    };
 
   return (
     <Container>
