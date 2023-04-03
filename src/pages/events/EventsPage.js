@@ -11,7 +11,7 @@ function EventsPage({message, filter = ''}) {
     const [query, setQuery] = useState('');
 
     useEffect(() => {
-        const fetchEvents = aysnc () => {
+        const fetchEvents = async () => {
             try {
                 const {data} = await axiosReq.get(`/events/?${filter}search=${query}`);
                 setEvents(data);
