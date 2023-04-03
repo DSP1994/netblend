@@ -53,7 +53,7 @@ function EventCreateForm() {
 
   return (
     <Container>
-        <Form>
+        <Form onSubmit={handleSubmit}>
             <Form.Group>
                 <Form.Label>Title</Form.Label>
                 <Form.Control />
