@@ -4,7 +4,7 @@ import { Link, useHistory } from 'react-router-dom'
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 
 import Avatar from '../../app_components/Avatar';
-import OwnerDropdown from '../../app_components/OwnerDropdown';
+import {OwnerDropdown} from '../../app_components/OwnerDropdown';
 import { axiosRes } from '../../netblend_api/axiosDefaults';
 
 function Event(props) {
