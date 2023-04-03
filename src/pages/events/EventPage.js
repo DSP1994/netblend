@@ -21,10 +21,10 @@ function EventPage() {
         }
         handleMount();
     }, [id]);
-    
+
   return (
     <Container>
-        <Event />
+        <Event {...event.results[0]} setEvent={setEvent} eventPage/>
     </Container>
   )
 }

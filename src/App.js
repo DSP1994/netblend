@@ -19,6 +19,7 @@ import ArticlePage from './pages/articles/ArticlePage';
 import ArticlesPage from './pages/articles/ArticlesPage'
 import EditArticleForm from './pages/articles/EditArticleForm';
 import EventCreateForm from './pages/events/EventCreateForm';
+import EventPage from './pages/events/EventPage';
 
 function App() {
   const currentUser = useCurrentUser();
@@ -73,6 +74,7 @@ function App() {
               <Route exact path='/article/:id' render={() => <ArticlePage />}/> 
               <Route exact path='/article' render={() => <ArticlesPage message="No Results Found" />}/>
               <Route exact path='/article/:id/edit' render={() => <EditArticleForm /> }/>
+              <Route exact path='/events/:id' render={() => <EventPage /> } />
               <Route exact path='/events/create' render={() => <EventCreateForm />} />
               <Route render={
                   ()=>
