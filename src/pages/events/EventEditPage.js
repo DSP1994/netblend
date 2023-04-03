@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Alert, Button, Container, Form, Row } from 'react-bootstrap'
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { axiosReq } from '../../netblend_api/axiosDefaults';
 import {useRedirect} from '../../hooks/useRedirect';
 import btnStyles from '../../design/Button.module.css';
@@ -23,6 +23,7 @@ function EventCreateForm() {
     const {title, content, date, time, city, country, price, event_link,} = eventData;
 
     const history = useHistory();
+    const {id} = useParams();
 
     const handleChange = (event) => {
         setEventData({
