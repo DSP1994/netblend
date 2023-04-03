@@ -33,21 +33,30 @@ const handleDelete = async () => {
   return (
     <Container>
         <Link>
-
+            <h2 to={`/events/${id}`}>
+                <strong>{title}</strong>
+            </h2>
         </Link>
+        <p>Last Updated: {modified_on}</p>
         <Media>
-            <Link>
-                <Avatar />
-                <p></p>
+            <Link to={`/events/${profile_id}`}>
+                <Avatar src={profile_image} height={45}/>
+                <p>Created By: {owner}</p>
             </Link>
             {is_owner && eventPage && (
                 <OwnerDropdown handleEdit={handleEdit} handleDelete={handleDelete} />
             )}
         </Media>
-        <p>Content</p>
-        <p>Location</p>
-        <p>Data/Time/Price</p>
-        <p>More Info Page</p>        
+        <p>{content}</p>
+        <p>Location: {city}, {country}</p>
+        <p>Data: {date} | Time: {time} | Cost: £{price}</p>
+        <p>More Info Page
+            <a
+                target='_blank'
+                rel='nofererrer'
+                href={event_link}
+            ><strong>Click Me</strong></a></p>        
+        <p>Uploaded: {created_on}</p>
     </Container>
   )
 }
