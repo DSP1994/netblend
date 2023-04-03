@@ -40,7 +40,9 @@ const handleDelete = async () => {
                 <Avatar />
                 <p></p>
             </Link>
-            <OwnerDropdown />
+            {is_owner && eventPage && (
+                <OwnerDropdown handleEdit={handleEdit} handleDelete={handleDelete} />
+            )}
         </Media>
         <p>Content</p>
         <p>Location</p>
