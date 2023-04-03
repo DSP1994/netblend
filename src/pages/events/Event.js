@@ -5,7 +5,11 @@ import { Link } from 'react-router-dom'
 import Avatar from '../../app_components/Avatar';
 import OwnerDropdown from '../../app_components/OwnerDropdown';
 
-function Event() {
+function Event(props) {
+const {id, owner, profile_id, profile_image, created_on,
+    modified_on, title, content, date, time, city,
+    country, price, event_link, eventPage, } = props
+
   return (
     <Container>
         <Link>
