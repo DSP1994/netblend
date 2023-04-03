@@ -35,8 +35,14 @@ function EventsPage({message, filter = ''}) {
   return (
     <Container>
         <div>
-            <Form>
-                <Form.Control />
+            <Form onSubmit={(event) => event.preventDefault()}>
+                <Form.Control 
+                    value={query}
+                    onChange={(event) => setQuery(event.target.value)}
+                    type='text'
+                    placeholder='search events'
+                    aria-label='search events'
+                />
             </Form>
         </div>
         <p>Loaded, or no?
