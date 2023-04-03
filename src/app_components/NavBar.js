@@ -68,7 +68,17 @@ const NavBar = () => {
                         <i className="fa-solid fa-file-pen" />
                         {' '}
                         Add Article
-                    </NavLink>                     
+                    </NavLink>
+                    <NavLink
+                        to="/events/create"
+                        className={styles.NavLink}
+                        activeClassName={styles.Active}
+                        aria-label="post an event"
+                    >
+                        <i className="fa-solid fa-calendar-days" />
+                        {' '}
+                        Add Event
+                    </NavLink>                                        
                     <NavLink
                         to='/'
                         className={styles.NavLink}
