@@ -69,14 +69,14 @@ const NavBar = () => {
                         {' '}
                         Add Article
                     </NavLink>
-                    {/* <NavLink
+                    <NavLink
                         to='/events'
                         className={styles.NavLink}
                         activeClassName={styles.Active}
                         >
                             <i className="fa-solid fa-calendar-clock"></i>
                             Events
-                    </NavLink>                          */}
+                    </NavLink>                         
                     <NavLink
                         to="/events/create"
                         className={styles.NavLink}
