@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
-import { Button, Container, Form, Row } from 'react-bootstrap'
+import { Alert, Button, Container, Form, Row } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom';
 import { axiosReq } from '../../netblend_api/axiosDefaults';
+import {useRedirect} from '../../hooks/useRedirect';
+import btnStyles from '../../design/Button.module.css';
 
 function EventCreateForm() {
+    useRedirect('loggedout');
     const [errors, setErrors] = useState();
 
     const [eventData, setEventData] = useState({
