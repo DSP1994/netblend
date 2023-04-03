@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Alert, Button, Container, Form, Row } from 'react-bootstrap'
 import { useHistory, useParams } from 'react-router-dom';
 import { axiosReq } from '../../netblend_api/axiosDefaults';
 import {useRedirect} from '../../hooks/useRedirect';
 import btnStyles from '../../design/Button.module.css';
 
-function EventCreateForm() {
+function EventEditForm() {
     useRedirect('loggedout');
     const [errors, setErrors] = useState();
 
@@ -24,6 +24,22 @@ function EventCreateForm() {
 
     const history = useHistory();
     const {id} = useParams();
+
+    useEffect(() => {
+        const handleMount = async () => {
+            try {
+                const {data} = await axiosReq.get(`/events/${id}/`);
+                const {title, content, date, time, city, country, price, event_link} = data;
+
+                is_owner ? setEventData({
+                    title, content, date, time, city, country, price, event_link
+                }) : history.push('/');
+            } catch (error) {
+                console.log(error)
+            }
+        };
+        handleMount();
+    }, [history, id]);
 
     const handleChange = (event) => {
         setEventData({
@@ -194,4 +210,4 @@ function EventCreateForm() {
   )
 }
 
-export default EventCreateForm
+export default EventEditForm
