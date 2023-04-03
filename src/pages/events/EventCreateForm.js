@@ -1,7 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Container, Form, Row } from 'react-bootstrap'
+import { useHistory } from 'react-router-dom';
 
 function EventCreateForm() {
+    const [errors, setErrors] = useState();
+
+    const [eventData, setEventData] = useState({
+        title: '',
+        content: '',
+        date: '',
+        time: '',
+        city: '',
+        country: '',
+        price: '',
+        event_link: '',
+    })
+    
+    const {title, content, date, time, city, country, price, event_link,} = eventData;
+
+    const history = useHistory();
   return (
     <Container>
         <Form>
