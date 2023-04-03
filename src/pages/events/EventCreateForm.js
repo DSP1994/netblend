@@ -28,7 +28,7 @@ function EventCreateForm() {
         });
     };
 
-    const handeSubmit = async(event) => {
+    const handleSubmit = async(event) => {
         event.preventDefault();
         const formData = new FormData();
 
@@ -64,6 +64,11 @@ function EventCreateForm() {
                     aria-label='title'
                 />
             </Form.Group>
+            {errors?.title?.map((message, idx) => (
+            <Alert variant="danger" key={idx}>
+                {message}
+            </Alert>
+            ))}            
             <Form.Group>
                 <Form.Label>Content</Form.Label>
                 <Form.Control 
@@ -75,6 +80,11 @@ function EventCreateForm() {
                     rows={8}
                 />
             </Form.Group>
+            {errors?.content?.map((message, idx) => (
+            <Alert variant="danger" key={idx}>
+                {message}
+            </Alert>
+            ))}            
             <Form.Group>
                 <Form.Label>City</Form.Label>
                 <Form.Control 
@@ -85,6 +95,11 @@ function EventCreateForm() {
                     aria-label='city'
                 />
             </Form.Group>
+            {errors?.city?.map((message, idx) => (
+            <Alert variant="danger" key={idx}>
+                {message}
+            </Alert>
+            ))}            
             <Form.Group>
                 <Form.Label>Country</Form.Label>
                 <Form.Control 
@@ -95,6 +110,11 @@ function EventCreateForm() {
                     aria-label='country'
                 />
             </Form.Group>
+            {errors?.country?.map((message, idx) => (
+            <Alert variant="danger" key={idx}>
+                {message}
+            </Alert>
+            ))}            
             <Form.Group>
                 <Form.Label>Date</Form.Label>
                 <Form.Control 
@@ -105,6 +125,11 @@ function EventCreateForm() {
                     aria-label='date'
                 />
             </Form.Group>
+            {errors?.date?.map((message, idx) => (
+            <Alert variant="danger" key={idx}>
+                {message}
+            </Alert>
+            ))}            
             <Form.Group>
                 <Form.Label>Time</Form.Label>
                 <Form.Control 
@@ -115,6 +140,11 @@ function EventCreateForm() {
                     aria-label='time'
                 />
             </Form.Group>
+            {errors?.time?.map((message, idx) => (
+            <Alert variant="danger" key={idx}>
+                {message}
+            </Alert>
+            ))}            
             <Form.Group>
                 <Form.Label>Cost</Form.Label>
                 <Form.Control 
@@ -125,6 +155,11 @@ function EventCreateForm() {
                     aria-label='price'
                 />
             </Form.Group>
+            {errors?.price?.map((message, idx) => (
+            <Alert variant="danger" key={idx}>
+                {message}
+            </Alert>
+            ))}            
             <Form.Group>
                 <Form.Label>Event Url</Form.Label>
                 <Form.Control 
@@ -133,8 +168,13 @@ function EventCreateForm() {
                     value={event_link}
                     onChange={handleChange}
                     aria-label='event url'
-                />
+                />              
             </Form.Group>
+            {errors?.event_link?.map((message, idx) => (
+            <Alert variant="danger" key={idx}>
+                {message}
+            </Alert>
+            ))}              
             <hr />
             <Row>
                 <Button>
