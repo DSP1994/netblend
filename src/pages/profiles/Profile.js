@@ -16,7 +16,7 @@ const Profile = (props) => {
 
     const {handleFollow, handleUnfollow} = useSetProfileData();
   return <div
-    className={`my-3 d-flex align-items-center ${mobile && 'flex-colum'}`}
+    className={`my-3 d-flex align-items-center ${mobile && 'flex-column'}`}
     >
         <div>
             <Link className='align-self-center' to={`/profiles/${id}`}>

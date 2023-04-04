@@ -41,7 +41,7 @@ function UploadPage() {
     <Row className='h-100'>
         <PopularProfiles mobile />
         <Upload {...post.results[0]} setPost={setPost} postPage/>
-        <Col className='py-2 p-0 p-lg-2' lg={8}>
+        <Col className='py-2 p-0 p-lg-2' lg={6}>
             <Container className={appStyles.Content}>
                 {currentUser ? (
                     <CommentForm
@@ -76,9 +76,6 @@ function UploadPage() {
                         <span>No comments yet. Log in or sign up!</span>
                     )}          
             </Container>
-        </Col>
-        <Col lg={4} className='d-none d-lg-block p-0 p-lg-2'>
-            <PopularProfiles />
         </Col>
     </Row>
   )
