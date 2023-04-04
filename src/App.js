@@ -22,6 +22,7 @@ import EventCreateForm from './pages/events/EventCreateForm';
 import EventPage from './pages/events/EventPage';
 import EventEditForm from './pages/events/EventEditForm';
 import EventsPage from './pages/events/EventsPage';
+import NotFound from './app_components/NotFound';
 
 function App() {
   const currentUser = useCurrentUser();
@@ -80,11 +81,7 @@ function App() {
               <Route exact path='/events' render={() => <EventsPage message='No results' />} />
               <Route exact path='/events/:id/edit' render={() => <EventEditForm />} />
               <Route exact path='/events/:id' render={() => <EventPage /> } />
-              <Route render={
-                  ()=>
-                  <p>
-                    Coffee Beans reach doesn't extend to this page! Our apologies. Please click on one of the links in the Navigation Bar to bring you back to our delicious coffee pages!
-                  </p>}
+              <Route render={()=> <NotFound />}
                   />
             </Switch>
           </Container>
