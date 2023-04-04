@@ -76,10 +76,10 @@ function App() {
               <Route exact path='/article/:id' render={() => <ArticlePage />}/> 
               <Route exact path='/article' render={() => <ArticlesPage message="No Results Found" />}/>
               <Route exact path='/article/:id/edit' render={() => <EditArticleForm /> }/>
+              <Route exact path='/events/create' render={() => <EventCreateForm />} />
               <Route exact path='/events' render={() => <EventsPage message='No results' />} />
               <Route exact path='/events/:id/edit' render={() => <EventEditForm />} />
               <Route exact path='/events/:id' render={() => <EventPage /> } />
-              <Route exact path='/events/create' render={() => <EventCreateForm />} />
               <Route render={
                   ()=>
                   <p>

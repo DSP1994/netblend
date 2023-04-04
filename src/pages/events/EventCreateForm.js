@@ -30,7 +30,7 @@ function EventCreateForm() {
             ...eventData,
             [event.target.name]: event.target.value,
         });
-    };
+    };       
 
     const handleSubmit = async(event) => {
         event.preventDefault();
@@ -57,6 +57,10 @@ function EventCreateForm() {
 
   return (
     <Container className={styles.FormAlign}>
+        <hr />
+        <h2>
+            <strong>Start an Event!</strong>
+        </h2>
         <Form onSubmit={handleSubmit}>
             <Form.Group>
                 <Form.Label>Title</Form.Label>
@@ -72,23 +76,23 @@ function EventCreateForm() {
             <Alert variant="danger" key={idx}>
                 {message}
             </Alert>
-            ))}            
+            ))}
             <Form.Group>
                 <Form.Label>Content</Form.Label>
                 <Form.Control 
-                    type='text'
+                    as='textarea'
+                    rows={8}
                     name='content'
                     value={content}
                     onChange={handleChange}
                     aria-label='content'
-                    rows={8}
                 />
             </Form.Group>
             {errors?.content?.map((message, idx) => (
             <Alert variant="danger" key={idx}>
                 {message}
             </Alert>
-            ))}            
+            ))}
             <Form.Group>
                 <Form.Label>City</Form.Label>
                 <Form.Control 
@@ -178,15 +182,15 @@ function EventCreateForm() {
             <Alert variant="danger" key={idx}>
                 {message}
             </Alert>
-            ))}              
-            <hr />
+            ))}
+            <hr />            
             <Row className={styles.RowSpace}>
                 <Button type='submit' className={btnStyles.Button}>
                     Confirm
                 </Button>
                 <Button onClick={() => history.goBack()} className={btnStyles.Button}>
                     Cancel
-                </Button>
+                </Button>            
             </Row>
             <hr />
         </Form>
