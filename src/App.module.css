@@ -68,6 +68,14 @@ figure {
     display: inline-block;
 }
 
+.TextContent {
+    color: #3e2622;
+}
+
+.Container {
+    min-height: 343px;
+}
+
 /* scrollbar */
 *::-webkit-scrollbar-track {
     width: 5px;

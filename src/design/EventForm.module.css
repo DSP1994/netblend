@@ -9,3 +9,7 @@
 .RowSpace {
     justify-content: space-evenly;
 }
+
+.Container {
+    min-height: 343px;
+}

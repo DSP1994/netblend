@@ -7,6 +7,7 @@ import { axiosReq } from '../../netblend_api/axiosDefaults';
 import { fetchMoreData } from '../../utils/utils';
 import Event from './Event';
 import PopularProfiles from '../profiles/PopularProfiles';
+import appStyles from '../../App.module.css'
 
 function EventsPage({message, filter = ''}) {
     const [events, setEvents] = useState({results: []});
@@ -39,7 +40,7 @@ function EventsPage({message, filter = ''}) {
   return (
     <Row className='h-100'>
         <Col className='py-2 p-0 p-lg-2' lg={8}>
-            <PopularProfiles mobile />        
+            <PopularProfiles mobile /> 
             <div>
                 <Form onSubmit={(event) => event.preventDefault()}>
                     <Form.Control 
@@ -77,7 +78,7 @@ function EventsPage({message, filter = ''}) {
         </Col>
         <Col md={4} className='d-none d-lg-block p-0 p-lg-2'>
             <PopularProfiles />
-        </Col>        
+        </Col>           
     </Row>
   );
 }

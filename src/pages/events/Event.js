@@ -7,6 +7,7 @@ import Avatar from '../../app_components/Avatar';
 import {OwnerDropdown} from '../../app_components/OwnerDropdown';
 import { axiosRes } from '../../netblend_api/axiosDefaults';
 import styles from '../../design/Event.module.css'
+import appStyles from '../../App.module.css'
 
 function Event(props) {
 const {id, owner, profile_id, profile_image, created_on,
@@ -32,7 +33,7 @@ const handleDelete = async () => {
 };
 
   return (
-    <Container className={styles.Event}>
+    <Container className={`${styles.Event} ${appStyles.Content}`}>
         <Link to={`/events/${id}`}>
             <h2>
                 <strong>{title}</strong>
@@ -48,7 +49,7 @@ const handleDelete = async () => {
                 <OwnerDropdown handleEdit={handleEdit} handleDelete={handleDelete} />
             )}
         </Media>
-        <div className={styles.TextContent}>
+        <div className={`${styles.TextContent}`}>
             <p>{content}</p>
             <p>Location: {city}, {country}</p>
             <p>Data: {date} | Time: {time} | Cost: £{price}</p>

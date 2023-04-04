@@ -73,7 +73,7 @@ const NavBar = () => {
                         className={styles.NavLink}
                         activeClassName={styles.Active}
                         >
-                            <i className="fa-solid fa-calendar-clock"></i>
+                            <i className="fa-solid fa-calendar-days"></i>
                             Events
                     </NavLink>                         
                     <NavLink

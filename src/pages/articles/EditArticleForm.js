@@ -54,7 +54,7 @@ function EditArticleForm() {
         formData.append('content', content);      
         
         try {
-            const {data} = await axiosReq.put(`/article/${id}`, formData);
+            const {data} = await axiosReq.put(`/article/${id}/`, formData);
             history.push(`/article/${data.id}`);
             console.log(formData)
         } catch (error) {
