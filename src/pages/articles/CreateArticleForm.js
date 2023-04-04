@@ -50,7 +50,7 @@ function CreateArticleForm() {
     <Row>
         <Col className='py-2 p-0 p-md-2' md={10} lg={10}>
             <Container className={`${appStyles.Content} ${styles.Container}`}>
-                <hr />
+                <br />
                 <h1 className='text-center'>
                     <strong>Create an Article</strong>
                 </h1>

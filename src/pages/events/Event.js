@@ -56,7 +56,7 @@ const handleDelete = async () => {
             <p>More Info Page 
                 <a
                     target='_blank'
-                    rel='nofererrer'
+                    rel='noreferrer'
                     href={event_link}
                 ><strong> Click Me</strong></a></p>        
             <p>Uploaded: {created_on}</p>

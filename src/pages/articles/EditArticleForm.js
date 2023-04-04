@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Container, Form, Row, Alert } from 'react-bootstrap'
+import { Button, Container, Form, Row, Alert, Col } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom';
 
 import appStyles from '../../App.module.css';
@@ -66,51 +66,57 @@ function EditArticleForm() {
     };
 
   return (
-    <Container className={styles.FormAlign}>
-        <hr />
-        <h1><strong>Edit an Article</strong></h1>
-        <Form onSubmit={handleSubmit}>
-            <Form.Group>
-                <Form.Label>Caption</Form.Label>
-                <Form.Control 
-                    type='text'
-                    name='title'
-                    value={title}
-                    onChange={handleChange}
-                    aria-label='title'
-                />
-            </Form.Group>
-            {errors?.title?.map((message, idx) => (
-            <Alert variant="danger" key={idx}>
-                {message}
-            </Alert>
-            ))}
-            <Form.Group>
-                <Form.Label>Description</Form.Label>
-                <Form.Control 
-                    as='textarea'
-                    rows={8}
-                    name='content'
-                    value={content}
-                    onChange={handleChange}
-                    aria-label='content'
-                />
-            </Form.Group>
-            {errors?.content?.map((message, idx) => (
-            <Alert variant="danger" key={idx}>
-                {message}
-            </Alert>
-            ))}
-            <Row className={styles.RowSpace}>
-                <Button type='submit' className={btnStyles.Button}>
-                    Edit
-                </Button>
-                <Button onClick={() => history.goBack()} className={btnStyles.Button}>
-                    Cancel
-                </Button>            
-            </Row>
-        </Form>
-    </Container>
+    <Row>
+        <Col className='py-2 p-0 p-md-2' md={10} lg={10}>
+            <Container className={`${appStyles.Content} ${styles.Container}`}>
+                <br />
+                <h1 className='text-center'>
+                    <strong>Edit an Article</strong>
+                </h1>
+                <Form onSubmit={handleSubmit} className='text-center'>
+                    <Form.Group>
+                        <Form.Label><strong>Caption</strong></Form.Label>
+                        <Form.Control 
+                            type='text'
+                            name='title'
+                            value={title}
+                            onChange={handleChange}
+                            aria-label='title'
+                        />
+                    </Form.Group>
+                    {errors?.title?.map((message, idx) => (
+                    <Alert variant="danger" key={idx}>
+                        {message}
+                    </Alert>
+                    ))}
+                    <Form.Group>
+                        <Form.Label><strong>Description</strong></Form.Label>
+                        <Form.Control 
+                            as='textarea'
+                            rows={8}
+                            name='content'
+                            value={content}
+                            onChange={handleChange}
+                            aria-label='content'
+                        />
+                    </Form.Group>
+                    {errors?.content?.map((message, idx) => (
+                    <Alert variant="danger" key={idx}>
+                        {message}
+                    </Alert>
+                    ))}
+                    <Row className={styles.RowSpace}>
+                        <Button type='submit' className={btnStyles.Button}>
+                            Edit
+                        </Button>
+                        <Button onClick={() => history.goBack()} className={btnStyles.Button}>
+                            Cancel
+                        </Button>            
+                    </Row>
+                </Form>
+            </Container>
+        </Col>
+    </Row>
   )
 }
 

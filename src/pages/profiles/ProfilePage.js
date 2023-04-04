@@ -95,7 +95,7 @@ function ProfilePage() {
         <>
         < hr/>
             <p className='text-center'>{profile?.owner}'s Posts</p>
-        <hr />
+        <br />
         {profilePosts.results.length ? (
             <InfiniteScroll
                 children={profilePosts.results.map((post) => (

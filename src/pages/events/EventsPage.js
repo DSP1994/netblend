@@ -7,7 +7,6 @@ import { axiosReq } from '../../netblend_api/axiosDefaults';
 import { fetchMoreData } from '../../utils/utils';
 import Event from './Event';
 import PopularProfiles from '../profiles/PopularProfiles';
-import appStyles from '../../App.module.css'
 
 function EventsPage({message, filter = ''}) {
     const [events, setEvents] = useState({results: []});

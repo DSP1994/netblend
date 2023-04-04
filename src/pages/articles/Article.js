@@ -34,7 +34,7 @@ function Article(props) {
 
   return (
     <Container className={`${appStyles.Container} ${styles.Article}`}>
-      <hr />
+      <br />
       <Media>
         <Link to={`/profiles/${profile_id}`}>
           <Avatar src={profile_image} height={55}/>
@@ -49,12 +49,12 @@ function Article(props) {
         <Link to={`article/${id}`}>
           <h2>{title}</h2>          
         </Link>
-        <hr />
+        <br />
         <p>{content}</p>
         <p>{created_on}</p>
         <p>{modified_on}</p>
       </Col>
-      <hr />
+      <br />
     </Container>
   )
 }

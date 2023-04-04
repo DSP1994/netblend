@@ -61,7 +61,7 @@ function EventCreateForm() {
     <Row>
         <Col className='py-2 p-0 p-md-2' md={10} lg={10}>
             <Container className={`${appStyles.Content} ${styles.Container}`}>
-                <hr />
+                <br />
                 <h1 className='text-center'>
                     <strong>Start an Event!</strong>
                 </h1>
@@ -187,7 +187,7 @@ function EventCreateForm() {
                         {message}
                     </Alert>
                     ))}
-                    <hr />            
+                    <br />            
                     <Row className={styles.RowSpace}>
                         <Button type='submit' className={btnStyles.Button}>
                             Post
@@ -196,7 +196,7 @@ function EventCreateForm() {
                             Cancel
                         </Button>            
                     </Row>
-                    <hr />
+                    <br />
                 </Form>
             </Container>
         </Col>
