@@ -66,7 +66,6 @@ const NavBar = () => {
                         aria-label="post an article"
                     >
                         <i className="fa-solid fa-file-pen" />
-                        {' '}
                         Add Article
                     </NavLink>
                     <NavLink
@@ -84,7 +83,6 @@ const NavBar = () => {
                         aria-label="post an event"
                     >
                         <i className="fa-solid fa-calendar-days" />
-                        {' '}
                         Add Event
                     </NavLink>                                        
                     <NavLink
