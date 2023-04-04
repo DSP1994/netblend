@@ -29,10 +29,10 @@ function EditArticleForm() {
                 const {title, content, is_owner} = data;
 
                 is_owner 
-                ? setArticleData({
-                    title, content
-                })
-                : history.push('/')
+                    ? setArticleData({
+                        title, content
+                    })
+                    : history.push('/')
             } catch (error) {
                 console.log(error)
             }

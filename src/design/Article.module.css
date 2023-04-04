@@ -5,3 +5,21 @@
 .Content {
     width: 100%;
 }
+
+.Article {
+    background-color: #643E36;
+    border: 1px solid #3e2622;
+    border-radius: 2px;
+    margin-bottom: 16px;
+    margin-top: 16px;
+    text-align: center;
+}
+
+.Article figure,
+h5 {
+    margin: 0 0;
+}
+
+.TextContent {
+    color: #FFFDD0;
+}

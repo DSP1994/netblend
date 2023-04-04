@@ -6,6 +6,7 @@ import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import Avatar from '../../app_components/Avatar';
 import {OwnerDropdown} from '../../app_components/OwnerDropdown';
 import { axiosRes } from '../../netblend_api/axiosDefaults';
+import styles from '../../design/Event.module.css'
 
 function Event(props) {
 const {id, owner, profile_id, profile_image, created_on,
@@ -31,9 +32,9 @@ const handleDelete = async () => {
 };
 
   return (
-    <Container>
-        <Link>
-            <h2 to={`/events/${id}`}>
+    <Container className={styles.Event}>
+        <Link to={`/events/${id}`}>
+            <h2>
                 <strong>{title}</strong>
             </h2>
         </Link>
@@ -47,16 +48,18 @@ const handleDelete = async () => {
                 <OwnerDropdown handleEdit={handleEdit} handleDelete={handleDelete} />
             )}
         </Media>
-        <p>{content}</p>
-        <p>Location: {city}, {country}</p>
-        <p>Data: {date} | Time: {time} | Cost: £{price}</p>
-        <p>More Info Page
-            <a
-                target='_blank'
-                rel='nofererrer'
-                href={event_link}
-            ><strong>Click Me</strong></a></p>        
-        <p>Uploaded: {created_on}</p>
+        <div className={styles.TextContent}>
+            <p>{content}</p>
+            <p>Location: {city}, {country}</p>
+            <p>Data: {date} | Time: {time} | Cost: £{price}</p>
+            <p>More Info Page
+                <a
+                    target='_blank'
+                    rel='nofererrer'
+                    href={event_link}
+                ><strong>Click Me</strong></a></p>        
+            <p>Uploaded: {created_on}</p>
+        </div>
     </Container>
   )
 }

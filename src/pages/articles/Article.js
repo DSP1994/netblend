@@ -33,7 +33,7 @@ function Article(props) {
     }
 
   return (
-    <Container className={appStyles.Container}>
+    <Container className={`${appStyles.Container} ${styles.Article}`}>
       <hr />
       <Media>
         <Link to={`/profiles/${profile_id}`}>
@@ -45,7 +45,7 @@ function Article(props) {
            )}        
       </Media>
 
-      <Col>
+      <Col className={styles.TextContent}>
         <Link to={`article/${id}`}>
           <h2>{title}</h2>          
         </Link>
