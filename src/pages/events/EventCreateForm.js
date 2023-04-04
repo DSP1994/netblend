@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { axiosReq } from '../../netblend_api/axiosDefaults';
 import {useRedirect} from '../../hooks/useRedirect';
 import btnStyles from '../../design/Button.module.css';
+import styles from '../../design/EventForm.module.css'
 
 function EventCreateForm() {
     useRedirect('loggedout');
@@ -55,7 +56,7 @@ function EventCreateForm() {
     };
 
   return (
-    <Container>
+    <Container className={styles.FormAlign}>
         <Form onSubmit={handleSubmit}>
             <Form.Group>
                 <Form.Label>Title</Form.Label>
@@ -179,7 +180,7 @@ function EventCreateForm() {
             </Alert>
             ))}              
             <hr />
-            <Row>
+            <Row className={styles.RowSpace}>
                 <Button type='submit' className={btnStyles.Button}>
                     Confirm
                 </Button>

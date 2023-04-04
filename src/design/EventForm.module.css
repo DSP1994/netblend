@@ -1,0 +1,11 @@
+.FormAlign {
+    text-align: center;
+}
+
+.FormAlign h2 {
+    text-transform: uppercase;
+}
+
+.RowSpace {
+    justify-content: space-evenly;
+}
