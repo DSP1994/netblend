@@ -16,7 +16,7 @@ function EventPage() {
                 ]);
                 setEvent({results: [event]});
             } catch (error) {
-                console.log(error)
+                // console.log(error)
             }
         }
         handleMount();

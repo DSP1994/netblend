@@ -30,7 +30,7 @@ function ArticlesPage({message, filter = ''}) {
                 setArticle(data);
                 setHasLoaded(true);
             } catch (error) {
-                console.log(error)
+                // console.log(error)
             }
         };
 

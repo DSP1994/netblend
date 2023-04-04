@@ -21,7 +21,7 @@ function EventsPage({message, filter = ''}) {
                 setEvents(data);
                 setHasLoaded(true)
             } catch (error) {
-                console.log(error)
+                // console.log(error)
             }
         };
 

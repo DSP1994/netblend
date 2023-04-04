@@ -18,12 +18,12 @@ export const ProfileDataProvider = ({ children }) => {
   const currentUser = useCurrentUser();
 
   const handleFollow = async (clickedProfile) => {
-    console.log('clickedProfile: ', clickedProfile)
+    // console.log('clickedProfile: ', clickedProfile)
     try {
       const { data } = await axiosRes.post("/followers/", {
         followed: clickedProfile.id,
       });
-      console.log(data)
+      // console.log(data)
 
       setProfileData((prevState) => ({
         ...prevState,
@@ -40,7 +40,7 @@ export const ProfileDataProvider = ({ children }) => {
         },
       }));
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -63,7 +63,7 @@ export const ProfileDataProvider = ({ children }) => {
         },
       }));
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -78,7 +78,7 @@ export const ProfileDataProvider = ({ children }) => {
           popularProfiles: data,
         }));
       } catch (error) {
-        console.log(error);
+        // console.log(error);
       }
     };
 

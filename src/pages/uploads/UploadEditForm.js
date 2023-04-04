@@ -31,7 +31,7 @@ function UploadEditForm() {
 
             is_owner ? setPostData({ title, content, image }) : history.push("/");
         } catch (err) {
-            console.log(err);
+            // console.log(err);
         }
         };
 
@@ -68,7 +68,7 @@ function UploadEditForm() {
             await axiosReq.put(`/posts/${id}/`, formData);
             history.push(`/posts/${id}/`);
         } catch (error) {
-            console.log(error)
+            // console.log(error)
             if (error.response?.status !== 401){
                 setErrors(error.response?.data)
             }

@@ -18,7 +18,7 @@ const Upload = (props) => {
 
     const currentUser = useCurrentUser()
     const is_owner = currentUser?.username === owner;
-    console.log(is_owner)
+    // console.log(is_owner)
     const history = useHistory();
 
     const handleEdit = () => {
@@ -30,7 +30,7 @@ const Upload = (props) => {
             await axiosRes.delete(`/posts/${id}/`)
             history.goBack();
         } catch (error) {
-            console.log(error)
+            // console.log(error)
         }
     }
 
@@ -46,7 +46,7 @@ const Upload = (props) => {
                 })
             }))
         } catch (error) {
-            console.log(error)
+            // console.log(error)
         }
     }
 
@@ -62,7 +62,7 @@ const Upload = (props) => {
                 }),
             }));
         } catch (error) {
-            console.log(error)
+            // console.log(error)
         }
     }
 

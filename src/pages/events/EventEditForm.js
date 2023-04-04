@@ -37,7 +37,7 @@ function EventEditForm() {
                     title, content, date, time, city, country, price, event_link
                 }) : history.push('/');
             } catch (error) {
-                console.log(error)
+                // console.log(error)
             }
         };
         handleMount();

@@ -53,7 +53,7 @@ function UploadForm() {
             const {data} = await axiosReq.post('/posts/', formData);
             history.push(`/posts/${data.id}`)
         } catch (error) {
-            console.log(error)
+            // console.log(error)
             if (error.response?.status !== 401){
                 setErrors(error.response?.data)
             }

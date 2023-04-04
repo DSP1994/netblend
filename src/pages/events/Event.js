@@ -27,7 +27,7 @@ const handleDelete = async () => {
         await axiosRes.delete(`/events/${id}/`);
         history.goBack();
     } catch (error) {
-        console.log(error)
+        // console.log(error)
         
     }
 };

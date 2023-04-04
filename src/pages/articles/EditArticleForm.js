@@ -32,7 +32,7 @@ function EditArticleForm() {
                         title, content
                     }) : history.push('/');
             } catch (error) {
-                console.log(error)
+                // console.log(error)
             }
         };
 
@@ -56,9 +56,9 @@ function EditArticleForm() {
         try {
             const {data} = await axiosReq.put(`/article/${id}/`, formData);
             history.push(`/article/${data.id}`);
-            console.log(formData)
+            // console.log(formData)
         } catch (error) {
-            console.log(error)
+            // console.log(error)
             if (error.response?.status !== 401){
                 setErrors(error.response?.data);
             }

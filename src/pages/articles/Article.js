@@ -28,7 +28,7 @@ function Article(props) {
         await axiosRes.delete(`/article/${id}/`);
         history.goBack();
       } catch (error) {
-        console.log(error)
+        // console.log(error)
       }
     }
 

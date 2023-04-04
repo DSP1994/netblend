@@ -37,9 +37,9 @@ function CreateArticleForm() {
         try {
             const {data} = await axiosReq.post('/article/', formData);
             history.push(`/article/${data.id}`);
-            console.log(formData)
+            // console.log(formData)
         } catch (error) {
-            console.log(error)
+            // console.log(error)
             if (error.response?.status !== 401){
                 setErrors(error.response?.data);
             }
