@@ -18,10 +18,12 @@ export const ProfileDataProvider = ({ children }) => {
     const currentUser = useCurrentUser();
 
     const handleFollow = async (clickedProfile) => {
+        console.log('clickedProfile: ', clickedProfile)
         try {
             const { data } = await axiosRes.post('/followers/', {
                 followed: clickedProfile.id
             });
+            console.log(data)
 
             setProfileData(prevState => ({
                 ...prevState,

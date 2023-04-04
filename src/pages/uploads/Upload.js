@@ -66,7 +66,7 @@ const Upload = (props) => {
         }
     }
 
-  return <Card className={styles.Post}>
+  return <Card className={`${styles.Post} ${styles.TextContent}`}>
     <Card.Body>
         <Media className='align-items-center justify-content-between'>
             <Link to={`/profiles/${profile_id}`}>
