@@ -38,7 +38,7 @@ const handleDelete = async () => {
                 <strong>{title}</strong>
             </h2>
         </Link>
-        <p>Last Updated: {modified_on}</p>
+        <p className={styles.TextContent}>Last Updated: {modified_on}</p>
         <Media>
             <Link to={`/events/${profile_id}`}>
                 <Avatar src={profile_image} height={45}/>
@@ -52,12 +52,12 @@ const handleDelete = async () => {
             <p>{content}</p>
             <p>Location: {city}, {country}</p>
             <p>Data: {date} | Time: {time} | Cost: £{price}</p>
-            <p>More Info Page
+            <p>More Info Page 
                 <a
                     target='_blank'
                     rel='nofererrer'
                     href={event_link}
-                ><strong>Click Me</strong></a></p>        
+                ><strong> Click Me</strong></a></p>        
             <p>Uploaded: {created_on}</p>
         </div>
     </Container>

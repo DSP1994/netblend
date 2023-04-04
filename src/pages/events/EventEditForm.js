@@ -198,7 +198,7 @@ function EventEditForm() {
             <hr />
             <Row>
                 <Button type='submit' className={btnStyles.Button}>
-                    Confirm
+                    Edit
                 </Button>
                 <Button onClick={() => history.goBack()} className={btnStyles.Button}>
                     Cancel

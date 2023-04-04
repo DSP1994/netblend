@@ -25,14 +25,12 @@ function EditArticleForm() {
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const {data} = await axiosReq.get(`/articles/${id}/`);
+                const {data} = await axiosReq.get(`/article/${id}/`);
                 const {title, content, is_owner} = data;
 
-                is_owner 
-                    ? setArticleData({
+                is_owner ? setArticleData({
                         title, content
-                    })
-                    : history.push('/')
+                    }) : history.push('/');
             } catch (error) {
                 console.log(error)
             }
@@ -70,7 +68,7 @@ function EditArticleForm() {
   return (
     <Container className={styles.FormAlign}>
         <hr />
-        <h1><strong>Create an Article</strong></h1>
+        <h1><strong>Edit an Article</strong></h1>
         <Form onSubmit={handleSubmit}>
             <Form.Group>
                 <Form.Label>Caption</Form.Label>

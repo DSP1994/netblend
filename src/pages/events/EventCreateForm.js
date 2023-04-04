@@ -186,7 +186,7 @@ function EventCreateForm() {
             <hr />            
             <Row className={styles.RowSpace}>
                 <Button type='submit' className={btnStyles.Button}>
-                    Confirm
+                    Post
                 </Button>
                 <Button onClick={() => history.goBack()} className={btnStyles.Button}>
                     Cancel
