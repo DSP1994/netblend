@@ -42,15 +42,7 @@ const NavBar = () => {
                         >
                             <i className="fas fa-stream"></i>
                             Followed Profiles
-                    </NavLink>
-                    <NavLink
-                        to='/article'
-                        className={styles.NavLink}
-                        activeClassName={styles.Active}
-                        >
-                            <i className="fas fa-book"></i>
-                            Articles
-                    </NavLink>                    
+                    </NavLink>                 
                     <NavLink
                         to='/liked'
                         className={styles.NavLink}
@@ -59,6 +51,14 @@ const NavBar = () => {
                             <i className="fas fa-heart"></i>
                             Liked Photos
                     </NavLink>
+                    <NavLink
+                        to='/article'
+                        className={styles.NavLink}
+                        activeClassName={styles.Active}
+                        >
+                            <i className="fas fa-book"></i>
+                            Articles
+                    </NavLink>                       
                     <NavLink
                         to="/article/create"
                         className={styles.NavLink}
