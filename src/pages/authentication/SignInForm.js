@@ -9,6 +9,7 @@ import { Row, Col, Container, Image, Form, Button, Alert } from 'react-bootstrap
 import { Link, useHistory } from 'react-router-dom';
 import { useSetCurrentUser } from '../../contexts/CurrentUserContext';
 import { useRedirect } from '../../hooks/useRedirect';
+import { setTokenTimestamp } from '../../utils/utils';
 
 function SignInForm () {
     const setCurrentUser = useSetCurrentUser();
@@ -26,7 +27,8 @@ function SignInForm () {
         event.preventDefault();
         try {
             const {data} = await axios.post("/dj-rest-auth/login/", signInData);
-            setCurrentUser(data.user)
+            setCurrentUser(data.user);
+            setTokenTimestamp(data)
             history.goBack();
         } catch (error) {
             setErrors(error.response?.data);
