@@ -12,6 +12,7 @@ import ImageSpinner from '../../app_components/ImageSpinner';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { fetchMoreData } from '../../utils/utils';
 import PopularProfiles from '../profiles/PopularProfiles';
+import { useCurrentUser } from '../../contexts/CurrentUserContext';
 
 
 function UploadsPage({ message, filter = ''}) {
@@ -20,6 +21,7 @@ function UploadsPage({ message, filter = ''}) {
     const {pathname} = useLocation();
 
     const [query, setQuery] = useState('');
+    const currentUser = useCurrentUser();
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -39,7 +41,7 @@ function UploadsPage({ message, filter = ''}) {
         return () => {
             clearTimeout(timer)
         }
-    }, [filter, query, pathname])
+    }, [filter, query, pathname, currentUser])
 
   return (
     <Row className='h-100'>
