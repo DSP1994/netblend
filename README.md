@@ -93,7 +93,7 @@ You can find a list of the user stories [here](src/readme/Userstories.md).
 
 ### **Colour Scheme**
 
-[!Colour Palette](src/readme/images/2.%20Readme-Coolors.png)
+![Colour Palette](src/readme/images/2.%20Readme-Coolors.png)
 
 ### **Typography**
 
@@ -114,65 +114,79 @@ The imagery used for the [Not Found Page](#not-found-page), in the [Add Photos](
 
 #### Mobile
 
-[Navbar](src/readme/images/3.%20Readme-NavBar-Mobile.png)
+![Navbar](src/readme/images/3.%20Readme-NavBar-Mobile.png)
 
 #### PC
 
-[Navbar](src/readme/images/3.%20Readme-NavBar-PC.png)
+![Navbar](src/readme/images/3.%20Readme-NavBar-PC.png)
 
 ### Add Photos
 
-[Add Photos](src/readme/images/4.%20Add%20Photo%20Page.png)
+![Add Photos](src/readme/images/4.%20Add%20Photo%20Page.png)
 
 ### Profile
 
-[Profile](src/readme/images/5.%20Readme-Profile.png)
+![Profile](src/readme/images/5.%20Readme-Profile.png)
 
 ### Followed Profiles
 
-[Followed Profiles](src/readme/images/6.%20Readme-Followed-Profiles.png)
+![Followed Profiles](src/readme/images/6.%20Readme-Followed-Profiles.png)
 
 ### Liked Photos
 
-[Liked Photos](src/readme/images/7.%20Readme-Liked-Photos.png)
+![Liked Photos](src/readme/images/7.%20Readme-Liked-Photos.png)
 
 ### Posts/Uploads
 
-[Posts/Uploads](src/readme/images/8.%20Readme-Uploads-Posts.png)
+![Posts/Uploads](src/readme/images/8.%20Readme-Uploads-Posts.png)
 
 ### Articles
 
-[Articles](src/readme/images/9.%20Readme-Articles.png)
+![Articles](src/readme/images/9.%20Readme-Articles.png)
 
 ### Add Articles
 
-[Add Articles](src/readme/images/10.%20Readme-Create-Article.png)
+![Add Articles](src/readme/images/10.%20Readme-Create-Article.png)
 
 ### Events
 
-[Events](src/readme/images/11.%20Readme-Events.png)
+![Events](src/readme/images/11.%20Readme-Events.png)
 
 ### Add Events
 
-[Add Events](src/readme/images/12.%20Readme-Create-Events.png)
+![Add Events](src/readme/images/12.%20Readme-Create-Events.png)
 
 ### Sign In/Up
 
-[Sign In/Up](src/readme/images/13.%20Readme-SignIn.png)
-[Sign In/Up](src/readme/images/13.%20Readme-SignUp.png)
+![Sign In/Up](src/readme/images/13.%20Readme-SignIn.png)
+![Sign In/Up](src/readme/images/13.%20Readme-SignUp.png)
 
 ### Not Found Page
 
-[Not Found Page](src/readme/images/14.%20Readme-NotFoundPage.png)
+![Not Found Page](src/readme/images/14.%20Readme-NotFoundPage.png)
 
 ---
 
 ## **Future Features**
-
+With more experience and understanding of react there are a number of features I'd love to add in the future, including the following;
+ - A confirmation warning if a user is about to delete something.
+ - The ability to expand a profile picture to see the full thing.
+ - Allowing users to share their posts to other social media sites via a share button.
+ - Comments on articles and events would be amazing.
+ - Notifications to the users phone or email when someone else interacts with *anything* that they have posted.
+ - Most importantly, **block** certain users, to allow users the freedom to hide their pages from who they wish.
 ---
 
-## **Testing**
-
+## **Manual Testing**
+1. CRUD functionality has been tested for each of the following: Posts | Articles | Events | Comments | Likes | Follow | Profile
+ - Likes & Follow may only be created & deleted
+ - Profile may only be updated
+2. Navigation links open to the correct pages.
+3. Pages intended for logged-in users only will send logged-out users back to the home page.
+4. Users trying to edit content that they did not publish are sent back to the home page.
+6. Users are able to create a new account.
+7. Users with an existing account are able to log in.
+8. Each user has the ability to log out.
 ---
 
 ## **Bugs**
