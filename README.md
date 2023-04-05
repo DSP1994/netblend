@@ -190,7 +190,7 @@ With more experience and understanding of react there are a number of features I
 ---
 
 ## **Bugs**
-
+The various bugs and errors I encountered can be found [here](src/readme/errors/Errors.md).
 ---
 
 ### Fixed
