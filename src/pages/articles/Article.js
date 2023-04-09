@@ -55,10 +55,9 @@ function Article(props) {
         </Link>
         <br />
         <p>{content}</p>
-        <p>{created_on}</p>
-        <p>{modified_on}</p>
+        <p>Created on: {created_on}</p>
+        <p>Modified on: {modified_on}</p>
       </Col>
-      <br />
     </Container>
   )
 }

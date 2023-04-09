@@ -49,7 +49,7 @@ function UploadsPage({ message, filter = ''}) {
             <PopularProfiles mobile />
             <i className={`fas fa-search ${styles.SearchIcon}`} />
             <Form
-                className={styles.SerachBar}
+                className={styles.SearchBar}
                 onSubmit={(event) => event.preventDefault()}>
                   <Form.Control 
                   type='text'
