@@ -47,9 +47,9 @@ Netblend is a social media website where the inter**NET** and coffee beans (that
   - [Sign In/Up Functions](#sign-inup)
   - [Not Found Page](#not-found-page)
 - [Future Features](#future-features)
-- [Testing](#testing)
 - [Bugs & Fixes](#bugs--fixes)
   - [Unknown Errors](#Unknown-Errors)
+- [Testing](#testing)
 - [Technology](#technology)
   - [Languages](#languages)
   - [Frameworks, libraries, programmes](#frameworks-libraries-programs)
@@ -78,16 +78,31 @@ You can find a list of the user stories [here](src/readme/Userstories.md).
 ---
 
 ### **Wireframes**
-
+I apologise for the bad drawings, I am no artist. I hope you get the jist! 
 #### Home Page
+
+![Home Page](src/readme/wireframes/Home-Page.jpg)
+
+#### Uploads Page
+
+![Uploads Page](src/readme/wireframes/Upload-Page.jpg)
+
+##### Article Page
+
+![Article Page](src/readme/wireframes/Article-Page.jpg)
+
+#### Event Page
+
+![Event Page](src/readme/wireframes/Event-Page.jpg)
 
 ##### Mobile
 
-##### Desktop
-
-##### Form Page
+![Mobile View](src/readme//wireframes/Mobile-View-1.jpg)
+![Mobile View](src/readme/wireframes/Mobile-View-2.jpg)
 
 ##### Site Navigation
+
+![Site Nav](src/readme/wireframes/Site-Navigation.png)
 
 ### **Colour Scheme**
 
@@ -178,6 +193,18 @@ With more experience and understanding of react there are a number of features I
 
 ---
 
+## **Bugs & Fixes**
+
+The various bugs and errors I encountered can be found [here](src/readme/errors/Errors.md).
+
+### **Unknown Errors**
+
+Upon asking friends and family to try creating a profile, editing said profile, uploading photos/articles etc, I found that there was another error that I was unable to solve. My best speculated guess is that due to the lack of safety features on the site, that come with most large social media sites, a number of anti-virus softwares try to block access to the site for fear of it harbouring viruses. I'm not sure how best to fix this.
+![Unknown Error 1](src/readme/Unknown-Error-1.jpg)
+![Unknown Error 2](src/readme/Unknown-Error-2.jpg)
+
+---
+
 ## **Manual Testing**
 
 1. CRUD functionality has been tested for each of the following: Posts | Articles | Events | Comments | Likes | Follow | Profile
@@ -209,18 +236,6 @@ With more experience and understanding of react there are a number of features I
 3. Site opens on mobiles (safari) & Chrome.
 
    ! [Mobile View](/src/readme/Mobile%20View.jpg)
-
----
-
-## **Bugs & Fixes**
-
-The various bugs and errors I encountered can be found [here](src/readme/errors/Errors.md).
-
-### **Unknown Errors**
-
-Upon asking friends and family to try creating a profile, editing said profile, uploading photos/articles etc, I found that there was another error that I was unable to solve. My best speculated guess is that due to the lack of safety features on the site, that come with most large social media sites, a number of anti-virus softwares try to block access to the site for fear of it harbouring viruses. I'm not sure how best to fix this.
-![Unknown Error 1](src/readme/Unknown-Error-1.jpg)
-![Unknown Error 2](src/readme/Unknown-Error-2.jpg)
 
 ---
 
