@@ -203,9 +203,12 @@ With more experience and understanding of react there are a number of features I
    ![Lighthouse Review](src/readme/Lighthouse-Review.png)
    ![Lighthouse Review](src/readme/Lighthouse-Review2.png)
    ![Lighthouse Review](src/readme/Lighthouse-Review3.png)
+
    My performance on the page is not where I would want it to be, however even Facebooks Performance is only 62! So this shows me that there is plenty of room for improvement. The majority of the issues come from the photo uploads that users post, maybe in the future I will be able to impliment code that reduces the image size (the gb/mb not the height/width) that will allow the site to perform better.
 
 3. Site opens on mobiles (safari) & Chrome.
+
+   ! [Mobile View](/src/readme/Mobile%20View.jpg)
 
 ---
 
@@ -321,7 +324,7 @@ web: serve -s build
 
 ### Deploy to Render & ElephantSQL:
 
-- Due to Heroku revoking their frie tier access, the project has been redeployed using (Render)[https://render.com/] & (ElephantSQL)[https://www.elephantsql.com/] using the following [instructions](https://code-institute-students.github.io/deployment-docs/41-pp5-adv-fe/pp5-adv-fe-drf-01-create-a-database)
+- Due to Heroku revoking their frie tier access, the project has been redeployed using (ElephantSQL)[https://www.elephantsql.com/] using the following [instructions](https://code-institute-students.github.io/deployment-docs/41-pp5-adv-fe/pp5-adv-fe-drf-01-create-a-database)
 
 ## **Credits**
 
