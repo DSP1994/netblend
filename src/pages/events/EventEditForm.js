@@ -100,12 +100,12 @@ function EventEditForm() {
                     <Form.Group>
                         <Form.Label>Content</Form.Label>
                         <Form.Control 
-                            type='text'
+                            as='textarea'
+                            rows={8}
                             name='content'
                             value={content}
                             onChange={handleChange}
                             aria-label='content'
-                            rows={8}
                         />
                     </Form.Group>
                     {errors?.content?.map((message, idx) => (
