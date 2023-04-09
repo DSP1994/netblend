@@ -204,7 +204,7 @@ function EventEditForm() {
                     </Alert>
                     ))}              
                     <br />
-                    <Row>
+                    <Row className={styles.RowSpace}>
                         <Button type='submit' className={btnStyles.Button}>
                             Edit
                         </Button>

@@ -18,7 +18,7 @@ const EditDelete = React.forwardRef(({ onClick }, ref) => (
 
 export const OwnerDropdown = ({handleEdit, handleDelete}) => {
     return (
-        <Dropdown className='ml-auto' drop='left'>
+        <Dropdown className={`${styles.Background}'ml-auto'`} drop='left'>
             <Dropdown.Toggle as={EditDelete}/>
             <Dropdown.Menu 
               className='text-center'
