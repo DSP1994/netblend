@@ -8,11 +8,11 @@ import { useCurrentUser } from '../../contexts/CurrentUserContext';
 // import appStyles from '../../App.module.css'
 import { OwnerDropdown } from '../../app_components/OwnerDropdown';
 import {axiosRes} from '../../netblend_api/axiosDefaults';
-import ArticlePage from './ArticlePage';
+// import ArticlePage from './ArticlePage';
 
 function Article(props) {
     const {id, owner, title, content, created_on,
-        modified_on, profile_id, profile_image,
+        modified_on, profile_id, profile_image, articlePage
      } = props;
 
     const currentUser = useCurrentUser();
@@ -35,19 +35,23 @@ function Article(props) {
   return (
     <Container className={`${appStyles.Container} ${styles.Article}`}>
       <br />
-      <Media>
+      <Media className='align-items-center justify-content-between'>
         <Link to={`/profiles/${profile_id}`}>
           <Avatar src={profile_image} height={55}/>
-          {owner}
+          {owner}      
         </Link>
-        {is_owner && ArticlePage && (
+        <div className='d-flex align-items-center'>
+          {is_owner && articlePage && (
           <OwnerDropdown handleEdit={handleEdit} handleDelete={handleDelete} />
-           )}        
-      </Media>
+            )}              
+        </div>   
+      </Media> 
 
       <Col className={styles.TextContent}>
-        <Link to={`article/${id}`}>
-          <h2>{title}</h2>          
+        <Link to={`/article/${id}`}>
+          <h2>
+            <strong>{title}</strong>
+          </h2>          
         </Link>
         <br />
         <p>{content}</p>
