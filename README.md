@@ -49,6 +49,7 @@ Netblend is a social media website where the inter**NET** and coffee beans (that
 - [Future Features](#future-features)
 - [Testing](#testing)
 - [Bugs & Fixes](#bugs--fixes)
+  - [Unknown Errors](#Unknown-Errors)
 - [Technology](#technology)
   - [Languages](#languages)
   - [Frameworks, libraries, programmes](#frameworks-libraries-programs)
@@ -211,6 +212,12 @@ With more experience and understanding of react there are a number of features I
 ## **Bugs & Fixes**
 
 The various bugs and errors I encountered can be found [here](src/readme/errors/Errors.md).
+
+### **Unknown Errors**
+
+Upon asking friends and family to try creating a profile, editing said profile, uploading photos/articles etc, I found that there was another error that I was unable to solve. My best speculated guess is that due to the lack of safety features on the site, that come with most large social media sites, a number of anti-virus softwares try to block access to the site for fear of it harbouring viruses. I'm not sure how best to fix this.
+![Unknown Error 1](src/readme/Unknown-Error-1.jpg)
+![Unknown Error 2](src/readme/Unknown-Error-2.jpg)
 
 ---
 
