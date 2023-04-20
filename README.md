@@ -20,6 +20,10 @@ Netblend is a social media website where the inter**NET** and coffee beans (that
 
 ![Site View Across Various Devices](src/readme/images/1.%20Readme-MockUp.png)
 
+## **_Personal Thoughts_**
+
+I found this project to be one of the hardest things I have ever done. This is coming from someone who has done martial arts for 20 years! This was by far more challenging. Admittedly due to my work load and personal life, I did have to take some time off which probably didn't help get through this project. However it was an amazing feat of mind power to steamroll through this, and anyone who is reading this README.md and is feeling overwhelmed, please believe me when I say it is worth it. Once it is completed you will feel on top of the world. I won't say that this project didn't give me some SERIOUS challenges, because it did. But it also opened my eyes to my previous projects, and how much I could now intergrate into those. Though I am grateful to have finally completed this project, I'm also ecstatic to see the back of it, and move on to other projects and see where I can test my limits now I know what I do. If I can do it, a school drop out with rubbish grades, anyone can! You've got this! Enjoy the README.md file, and I hope it helps someone somewhere along their coding education!
+
 ## Content
 
 ---
@@ -48,6 +52,7 @@ Netblend is a social media website where the inter**NET** and coffee beans (that
   - [Not Found Page](#not-found-page)
 - [Future Features](#future-features)
 - [Bugs & Fixes](#bugs--fixes)
+  - [Known Errors](#Known-Errors)
   - [Unknown Errors](#Unknown-Errors)
 - [Testing](#testing)
 - [Technology](#technology)
@@ -78,7 +83,9 @@ You can find a list of the user stories [here](src/readme/Userstories.md).
 ---
 
 ### **Wireframes**
-I apologise for the bad drawings, I am no artist. I hope you get the jist! 
+
+I apologise for the bad drawings, I am no artist. I hope you get the jist!
+
 #### Home Page
 
 ![Home Page](src/readme/wireframes/Home-Page.jpg)
@@ -196,6 +203,12 @@ With more experience and understanding of react there are a number of features I
 ## **Bugs & Fixes**
 
 The various bugs and errors I encountered can be found [here](src/readme/errors/Errors.md).
+
+### **Known Errors**
+
+There are a few minor errors in which I don't have time to solve, however it is best for me to log them within the readme, to prove that I am aware of these, and hopefully fix them within the future;
+
+- When clicking on 'add event' or 'add article' within the navbar, the 'event' and 'article', respectively also highlight themselves as if you are on those pages. This is just a visual error to do with the CSS somewhere within the code.
 
 ### **Unknown Errors**
 
