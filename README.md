@@ -55,6 +55,7 @@ I found this project to be one of the hardest things I have ever done. This is c
   - [Known Errors](#Known-Errors)
   - [Unknown Errors](#Unknown-Errors)
 - [Testing](#testing)
+  - [Manual Testing](#manual-testing)
 - [Technology](#technology)
   - [Languages](#languages)
   - [Frameworks, libraries, programmes](#frameworks-libraries-programs)
@@ -231,6 +232,10 @@ Upon asking friends and family to try creating a profile, editing said profile, 
 5. Users are able to create a new account.
 6. Users with an existing account are able to log in.
 7. Each user has the ability to log out.
+
+### **User Manual Test**
+
+Due to amount of User Stories, please find the manual testing [here](/UserTesting.md)! Thank you.
 
 ### **Validator Testing**
 
