@@ -110,6 +110,6 @@
 
 40. As a **user** I would like to **view all articles** so that I can **take a gander through everyones thoughts**
 
-41. As a **user** I would like to **view article details** so that I can **very it in a large window and not be distracted by other articles**
+41. As a **user** I would like to **view article details** so that I can **view it in a large window and not be distracted by other articles**
 
 ---
