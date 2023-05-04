@@ -8,7 +8,7 @@ import appStyles from '../../App.module.css';
 import styles from '../../design/EventForm.module.css'
 
 function EventEditForm() {
-    useRedirect('loggedout');
+    useRedirect('loggedOut');
     const [errors, setErrors] = useState();
 
     const [eventData, setEventData] = useState({

@@ -9,7 +9,7 @@ import appStyles from '../../App.module.css';
 
 
 function EventCreateForm() {
-    useRedirect('loggedout');
+    useRedirect('loggedOut');
     const [errors, setErrors] = useState();
 
     const [eventData, setEventData] = useState({
