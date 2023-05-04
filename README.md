@@ -235,7 +235,7 @@ Upon asking friends and family to try creating a profile, editing said profile, 
 
 ### **User Manual Test**
 
-Due to amount of User Stories, please find the manual testing [here](/UserTesting.md)! Thank you.
+Due to amount of User Stories, please find the manual testing [here](src/readme/UserTesting.md)! Thank you.
 
 ### **Validator Testing**
 
